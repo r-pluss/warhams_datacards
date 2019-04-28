@@ -78,7 +78,6 @@ main {
 .unit-comp > textarea {
     background: transparent;
     border: none;
-    color: #fff;
     height: calc(100% - 1.5em);
     padding: 0;
     resize: none;
