@@ -68,6 +68,21 @@ main {
     background-color: #abe89f;
 }
 
+.unit-comp {
+    width: 35%;
+}
+
+.unit-comp > textarea {
+    background: transparent;
+    border: none;
+    color: #fff;
+    height: 100%;
+    padding: 0;
+    resize: none;
+    text-align: left;
+    width: 100%;
+}
+
 .unit-name {
     background-color: #000;
     display: flex;
