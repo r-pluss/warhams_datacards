@@ -61,6 +61,7 @@ main {
 
 .stat-table {
     border-collapse: collapse;
+    width: 100%;
 }
 
 .stat-table thead {
@@ -84,4 +85,12 @@ main {
     resize: none;
     text-align: center;
     width: 80%;
+}
+
+.wname {
+    width: 33.33333%;
+}
+
+.wstat {
+    width: 7.407407333333333%;
 }
