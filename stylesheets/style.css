@@ -57,6 +57,14 @@ main {
   width: 55%;
 }
 
+.profiles .wname {
+    width: 33.33333%;
+}
+
+.profiles .wstat {
+    width: 7.407407333333333%;
+}
+
 .role {
     background-color: #0f0;
     width: 2.5%;
@@ -128,15 +136,15 @@ main {
     width: 100%;
 }
 
-.wname {
-    width: 33.33333%;
+.weapons .wname {
+    width: 24%;
 }
 
-.wstat {
-    width: 7.407407333333333%;
+.weapons .wstat {
+    width: 10.4%;
 }
 
 #add-profile {
-  position: absolute;
-  right: 0px;
+    position: absolute;
+    right: 0px;
 }
