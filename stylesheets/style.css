@@ -132,6 +132,16 @@ main {
     width: 20%;
 }
 
+.wargear > textarea {
+    background: transparent;
+    border: none;
+    min-height: 10em;;
+    padding: 0;
+    resize: none;
+    text-align: left;
+    width: 100%;
+}
+
 .weapons {
     width: 100%;
 }
