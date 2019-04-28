@@ -16,6 +16,7 @@ main {
 .header {
     background-color: #000;
     color: #fff;
+    height: 1.5em;
     font-family: 'Squada One';
     margin-block-end: 0px;
     margin-block-start: 0px;
@@ -67,6 +68,7 @@ main {
 
 .stat-table thead {
     background-color: #abe89f;
+    font-family: 'Squada One';
 }
 
 .unit-comp {
@@ -77,8 +79,7 @@ main {
     background: transparent;
     border: none;
     color: #fff;
-    font-family: 'Diplomata SC';
-    height: 100%;
+    height: calc(100% - 1.5em);
     padding: 0;
     resize: none;
     text-align: left;
@@ -97,6 +98,7 @@ main {
     background: transparent;
     border: none;
     color: #fff;
+    font-family: 'Diplomata SC';
     height: 100%;
     padding: 0;
     resize: none;
@@ -110,4 +112,9 @@ main {
 
 .wstat {
     width: 7.407407333333333%;
+}
+
+#add-profile {
+  position: absolute;
+  right: 0px;
 }
