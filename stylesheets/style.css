@@ -4,6 +4,20 @@ main {
     justify-content: center;
 }
 
+.abilities {
+    width: 75%;
+}
+
+.abilities > textarea {
+    background: transparent;
+    border: none;
+    min-height: 10em;;
+    padding: 0;
+    resize: none;
+    text-align: left;
+    width: 100%;
+}
+
 .datacard {
     align-items: center;
     border: 1px solid #000;
@@ -104,6 +118,14 @@ main {
     resize: none;
     text-align: center;
     width: 80%;
+}
+
+.wargear {
+    width: 20%;
+}
+
+.weapons {
+    width: 100%;
 }
 
 .wname {
