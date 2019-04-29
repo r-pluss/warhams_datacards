@@ -211,10 +211,14 @@ main {
     border-radius: 50%;
     color: #62ef48;
     cursor: pointer;
-    font-size: 1em;
+    height: 1em;
+    font-size: 1.2em;
     font-weight: 700;
+    line-height: 1em;
+    padding: 0;
     position: absolute;
     right: 2px;
+    width: 1em;
 }
 
 #add-profile:after {
