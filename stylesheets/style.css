@@ -206,6 +206,17 @@ main {
 }
 
 #add-profile {
+    background-color: transparent;
+    border: solid 1px #62ef48;
+    border-radius: 50%;
+    color: #62ef48;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 700;
     position: absolute;
-    right: 0px;
+    right: 2px;
+}
+
+#add-profile:after {
+    content: '+';
 }
