@@ -27,6 +27,23 @@ main {
     width: 80%;
 }
 
+.faction-keywords {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.faction-keywords > textarea {
+    background: transparent;
+    border: none;
+    height: 100%;
+    padding: 0;
+    resize: none;
+    text-align: left;
+    width: 85%;
+}
+
 .header {
     background-color: #000;
     color: #fff;
@@ -36,6 +53,35 @@ main {
     margin-block-start: 0px;
     position: relative;
     width: 100%
+}
+
+.keywords {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.keywords > textarea {
+    background: transparent;
+    border: none;
+    height: 100%;
+    padding: 0;
+    resize: none;
+    text-align: left;
+    width: 85%;
+}
+
+.label {
+    background-color: #000;
+    color: #fff;
+    height: 100%;
+    font-family: 'Squada One';
+    line-height: 200%;
+    margin-block-end: 0px;
+    margin-block-start: 0px;
+    position: relative;
+    width: 15%;
 }
 
 .power-rating {
@@ -78,6 +124,11 @@ main {
     margin-bottom: 2vh;
     margin-top: 2vh;
     width: 90%;
+}
+
+.row.single {
+    align-items: center;
+    flex-direction: column;
 }
 
 .stat-box {
