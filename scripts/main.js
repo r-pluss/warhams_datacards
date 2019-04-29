@@ -61,6 +61,7 @@ function makeProfileCell(classList){
         cell.classList.add(cls);
     }
     let textarea = document.createElement('textarea');
+    textarea.setAttribute('rows', '1');
     cell.appendChild(textarea);
     return cell;
 }
