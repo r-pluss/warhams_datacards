@@ -140,6 +140,20 @@ main {
     width: 100%;
 }
 
+.stat-table tbody {
+    background-color: #dee0d0;
+}
+
+.stat-table textarea {
+    background: transparent;
+    border: none;
+    height: 100%;
+    padding: 0;
+    resize: none;
+    text-align: center;
+    width: 100%;
+}
+
 .stat-table thead {
     background-color: #a8ad87;
     font-family: 'Squada One';
