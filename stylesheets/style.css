@@ -2,7 +2,9 @@
 body {
     align-items: center;
     display: flex;
-    min-height: 1vh;
+    flex-direction: column;
+    margin: 0;
+    min-height: 100vh;
     justify-content: center;
     width: 100%;
 }
