@@ -95,7 +95,8 @@ function makeProfileRow(){
         row.appendChild(makeProfileCell(fld.classes, fld.hasOwnProperty('placeholder') ? fld.placeholder : undefined))
     }
     let removeBtn = document.createElement('button');
-    removeBtn.classList.add(...['remove-profile', 'ui-only']);
+    removeBtn.classList.add('remove-profile');
+    removeBtn.setAttribute('data-html2canvas-ignore');
     removeBtn.addEventListener('click', removeProfile, {passive: true});
     row.appendChild(removeBtn);
     return row;
@@ -121,10 +122,6 @@ function removeProfile(ev){
 }
 
 function snapshot(){
-    hideUIElements();
-    /**** attempt to fix render issue ****/
-    window.requestAnimationFrame(function(domTS){});
-    /*************************************/
     let sheets = document.getElementsByClassName('datasheet');
     for(let sheet of sheets){
         html2canvas(sheet).then(
@@ -137,7 +134,6 @@ function snapshot(){
             }
         );
     }
-    unHideUIElements();
 }
 
 function unHideUIElements(){
