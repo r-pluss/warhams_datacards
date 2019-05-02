@@ -82,13 +82,20 @@ function changeBattlefieldRole(ev){
     }
 }
 
+function hideUIElements(){
+    let els = document.getElementsByClassName('ui-only');
+    for(let el of els){
+        el.classList.add('hidden');
+    }
+}
+
 function makeProfileRow(){
     let row = document.createElement('tr');
     for(let fld of profileFields){
         row.appendChild(makeProfileCell(fld.classes, fld.hasOwnProperty('placeholder') ? fld.placeholder : undefined))
     }
     let removeBtn = document.createElement('button');
-    removeBtn.classList.add('remove-profile');
+    removeBtn.classList.add(...['remove-profile', 'ui-only']);
     removeBtn.addEventListener('click', removeProfile, {passive: true});
     row.appendChild(removeBtn);
     return row;
@@ -114,6 +121,7 @@ function removeProfile(ev){
 }
 
 function snapshot(){
+    hideUIElements();
     let sheets = document.getElementsByClassName('datasheet');
     for(let sheet of sheets){
         html2canvas(sheet).then(
@@ -125,6 +133,14 @@ function snapshot(){
                 a.click();
             }
         );
+    }
+    unHideUIElements();
+}
+
+function unHideUIElements(){
+    let els = document.getElementsByClassName('ui-only');
+    for(let el of els){
+        el.classList.remove('hidden');
     }
 }
 
