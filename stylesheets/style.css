@@ -11,6 +11,26 @@ main {
     width: 100%;
 }
 
+.add-profile {
+    background-color: transparent;
+    border: solid 1px #2da780;
+    border-radius: 50%;
+    color: #2da780;
+    cursor: pointer;
+    height: 1em;
+    font-size: 1.2em;
+    font-weight: 700;
+    line-height: 1em;
+    padding: 0;
+    position: absolute;
+    right: 3px;
+    width: 1em;
+}
+
+.add-profile:after {
+    content: '+';
+}
+
 .battlefield-role {
     height: 65px;
     width: 65px;
@@ -96,7 +116,7 @@ main {
     width: 65px;
 }
 
-.power-rating > textarea {
+.power-rating > input {
     background-color: transparent;
     border: none;
     color: #fff;
@@ -117,8 +137,50 @@ main {
     width: 100%;
 }
 
+.profile-table textarea {
+    background-color: transparent;
+    border: none;
+    height: 100%;
+    resize: none;
+    text-align: center;
+    width: 100%;
+}
+
 .profile-table thead {
     background-color: #b2bbb6;
+}
+
+.profiles {
+    position: relative;
+}
+
+.profiles .wname {
+    width: 33.33333%;
+}
+
+.profiles .wstat {
+    width: 7.407407333333333%;
+}
+
+.remove-profile {
+    background-color: transparent;
+    border: solid 1px #b32774;
+    border-radius: 50%;
+    color: #b32774;
+    cursor: pointer;
+    height: 1em;
+    font-size: 1.2em;
+    font-weight: 700;
+    line-height: 0.8em;
+    margin-top: 0.1em;
+    padding: 0;
+    position: absolute;
+    right: 3px;
+    width: 1em;
+}
+
+.remove-profile:after {
+    content: '-';
 }
 
 .unit-composition textarea {
