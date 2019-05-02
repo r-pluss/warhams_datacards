@@ -1,7 +1,7 @@
 # warhams_datacards
 editable, printable data cards for Warhammer models
 
-##todo
+## todo
 
 * inter-session persistence of created datasheets
 * abilities entry
@@ -13,3 +13,4 @@ editable, printable data cards for Warhammer models
 * significantly improve visual appearance
 * ~~remove ui dev borders~~
 * hide append/remove buttons from saved image
+* alternating row colors for tables
