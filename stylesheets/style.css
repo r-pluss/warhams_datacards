@@ -87,7 +87,29 @@ main {
 }
 
 .power-rating {
+    align-items: center;
+    background: url('../assets/icons/power_rating_icon.png') center no-repeat;
+    background: url(https://r-pluss.github.io/warhams_datacards/assets/icons/power_rating_icon.png) center no-repeat;
+    display: flex;
     height: 65px;
+    justify-content: center;
+    width: 65px;
+}
+
+.power-rating > textarea {
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 700;
+    height: 30%;
+    resize: none;
+    text-align: center;
+    width: 60px;
+}
+
+.pr-label {
+    color: #ccc;
 }
 
 .profile-table {
@@ -107,15 +129,16 @@ main {
 }
 
 .unit-name {
+    margin-left: 5%;
     width: 60%;
 }
 
 .unit-name textarea {
     background-color: transparent;
     border: none;
-    font-size: 1.5rem;
+    font-size: 50px;
     font-weight: 700;
-    height: 2rem;
+    height: 100%;
     padding: 0;
     resize: none;
     width: 100%;
