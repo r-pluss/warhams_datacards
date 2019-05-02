@@ -96,7 +96,7 @@ function makeProfileRow(){
     }
     let removeBtn = document.createElement('button');
     removeBtn.classList.add('remove-profile');
-    removeBtn.setAttribute('data-html2canvas-ignore');
+    removeBtn.setAttribute('data-html2canvas-ignore', '');
     removeBtn.addEventListener('click', removeProfile, {passive: true});
     row.appendChild(removeBtn);
     return row;
