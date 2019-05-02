@@ -123,7 +123,7 @@ function removeProfile(ev){
 function snapshot(){
     hideUIElements();
     /**** attempt to fix render issue ****/
-    window.requestAnimationFrame();
+    window.requestAnimationFrame(function(domTS){});
     /*************************************/
     let sheets = document.getElementsByClassName('datasheet');
     for(let sheet of sheets){
