@@ -1,95 +1,73 @@
 <!doctype html>
 <html>
 <head>
-  <link href= 'https://fonts.googleapis.com/css?family=Diplomata+SC|Squada+One' rel='stylesheet'>
-  <link rel= 'stylesheet' href= './stylesheets/style.css'>
+    <link rel= 'stylesheet' href= './stylesheets/style.css'>
 </head>
 <body>
-  <main>
-    <div class= 'datacard'>
-      <div class= 'row'>
-        <div class= 'unit-name'>
-          <textarea placeholder= 'Enter Unit Name' rows= '1'></textarea>
+    <main>
+        <div class= 'datasheet'>
+            <section class= 'header'>
+                <div class= 'battlefield-role troop'></div>
+                <div class= 'power-rating'></div>
+                <div class= 'unit-name'>
+                    <textarea placeholder= 'Enter Unit Name' rows= '1'></textarea>
+                </div>
+            </section>
+            <section class= 'profiles'>
+                <table class= 'profile-table'>
+                    <thead>
+                        <tr>
+                            <th class= 'wname'>NAME</th>
+                            <th class= 'wstat'>M</th>
+                            <th class= 'wstat'>WS</th>
+                            <th class= 'wstat'>BS</th>
+                            <th class= 'wstat'>S</th>
+                            <th class= 'wstat'>T</th>
+                            <th class= 'wstat'>W</th>
+                            <th class= 'wstat'>A</th>
+                            <th class= 'wstat'>Ld</th>
+                            <th class= 'wstat'>Sv</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </section>
+            <section class= 'unit-composition'>
+                <div class= 'label'>UNIT COMPOSITION</div>
+                <textarea placeholder='Enter unit composition here'></textarea>
+            </section>
+            <section class= 'weapons'>
+                <table class= 'weapon-table'>
+                    <thead>
+                        <tr>
+                            <th class= 'wname'>WEAPON</th>
+                            <th class= 'wstat'>Range</th>
+                            <th class= 'wstat'>Type</th>
+                            <th class= 'wstat'>S</th>
+                            <th class= 'wstat'>AP</th>
+                            <th class= 'wstat'>D</th>
+                            <th class= 'wname'>ABILITIES</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </section>
+            <section class= 'wargear-options'>
+                <div class= 'label'>WARGEAR OPTIONS</div>
+            </section>
+            <section class= 'abilities'>
+                <div class= 'label'>ABILITIES</div>
+            </section>
+            <section class= 'faction-keywords'>
+                <div class= 'label'>FACTION KEYWORDS</div>
+            </section>
+            <section class= 'keywords'>
+                <div class= 'label'>KEYWORDS</div>
+            </section>
         </div>
-        <div class= 'role'>
-        </div>
-        <div class= 'power-rating'>
-          <textarea rows='1'></textarea>
-        </div>
-      </div>
-      <div class= 'row'>
-        <div class= 'profiles stat-box'>
-          <p class= 'header'>PROFILES
-            <button id= 'add-profile'></button>
-          </p>
-          <table class= 'stat-table'>
-            <thead>
-              <tr>
-                <th class= 'wname'>NAME</th>
-                <th class= 'wstat'>M</th>
-                <th class= 'wstat'>WS</th>
-                <th class= 'wstat'>BS</th>
-                <th class= 'wstat'>S</th>
-                <th class= 'wstat'>T</th>
-                <th class= 'wstat'>W</th>
-                <th class= 'wstat'>A</th>
-                <th class= 'wstat'>Ld</th>
-                <th class= 'wstat'>Sv</th>
-              </tr>
-            </thead>
-            <tbody>
-            </tbody>
-          </table>
-        </div>
-        <div class= 'unit-comp'>
-          <p class= 'header'>UNIT COMPOSITION</p>
-          <textarea placeholder= 'Enter the models in this unit'></textarea>
-        </div>
-      </div>
-      <div class= 'row'>
-        <div class= 'wargear'>
-          <p class= 'header'>WARGEAR</p>
-          <textarea placeholder= 'List the items this unit is equipped with'></textarea>
-        </div>
-        <div class= 'abilities'>
-          <p class= 'header'>ABILITIES</p>
-          <textarea placeholder= 'List relevant unit abilities here'></textarea>
-        </div>
-      </div>
-      <div class= 'row'>
-        <div class= 'weapons statbox'>
-          <p class= 'header'>WEAPONS</p>
-          <table class= 'stat-table'>
-            <thead>
-              <tr>
-                <th class= 'wname'>WEAPON</th>
-                <th class= 'wstat'>Range</th>
-                <th class= 'wstat'>Type</th>
-                <th class= 'wstat'>S</th>
-                <th class= 'wstat'>AP</th>
-                <th class= 'wstat'>D</th>
-                <th class= 'wname'>ABILITIES</th>
-              </tr>
-            </thead>
-            <tbody>
-            </tbody>
-          </table>
-        </div>
-      </div>
-      <div class= 'row single'>
-        <div class= 'faction-keywords'>
-          <div class= 'label'>FACTION KEYWORDS</div>
-          <textarea></textarea>
-        </div>
-      </div>
-      <div class= 'row single'>
-        <div class= 'keywords'>
-          <p class= 'label'>KEYWORDS</p>
-          <textarea></textarea>
-        </div>
-      </div>
-    </div>
-  </main>
-  <script src= './scripts/main.js'></script>
+    </main>
+    <script src= './scripts/main.js'></script>
 </body>
 </html>
