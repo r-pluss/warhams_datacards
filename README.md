@@ -10,3 +10,4 @@ wargear entry
 weapon table
 consider adding markup support for certain fields
 significantly improve visual appearance
+remove ui dev borders
