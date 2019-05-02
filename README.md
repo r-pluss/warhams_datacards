@@ -12,5 +12,5 @@ editable, printable data cards for Warhammer models
 * consider adding markup support for certain fields
 * significantly improve visual appearance
 * ~~remove ui dev borders~~
-* hide append/remove buttons from saved image
+* ~~hide append/remove buttons from saved image~~
 * alternating row colors for tables
