@@ -1,6 +1,9 @@
 
 body {
+    align-items: center;
     display: flex;
+    min-height: 1vh;
+    justify-content: center;
     width: 100%;
 }
 
