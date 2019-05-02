@@ -113,6 +113,21 @@ function removeProfile(ev){
     tr.parentNode.removeChild(tr);
 }
 
+function snapshot(){
+    let sheets = document.getElementsByClassName('datasheet');
+    for(let sheet of sheets){
+        html2canvas(sheet).then(
+            function(canvas){
+                let img = canvas.toDataURL();
+                let a = document.createElement('a');
+                a.href = img;
+                a.setAttribute('download', 'datasheet_test.png');
+                a.click();
+            }
+        );
+    }
+}
+
 let bfRoles = document.getElementsByClassName('battlefield-role');
 for(let el of bfRoles){
     el.addEventListener('click', changeBattlefieldRole, {passive: true})
@@ -120,4 +135,9 @@ for(let el of bfRoles){
 let addProfileBtns = document.getElementsByClassName('add-profile');
 for(let el of addProfileBtns){
     el.addEventListener('click', addProfile, {passive: true});
+}
+
+let snapshotBtns = document.getElementsByClassName('snapshot-btn');
+for(let btn of snapshotBtns){
+    btn.addEventListener('click', snapshot, {passive: true})
 }
