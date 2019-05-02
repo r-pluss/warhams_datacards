@@ -112,6 +112,7 @@ main {
 
 .hidden {
     display: none;
+    transform: translateZ(0); /*attempt to force rendering*/
 }
 
 .power-rating {
