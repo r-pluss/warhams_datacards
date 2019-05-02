@@ -198,9 +198,10 @@ main {
     width: 60%;
 }
 
-.unit-name textarea {
+.unit-name input {
     background-color: transparent;
     border: none;
+    color: white;
     font-size: 50px;
     font-weight: 700;
     height: 100%;
