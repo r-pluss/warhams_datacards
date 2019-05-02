@@ -122,6 +122,9 @@ function removeProfile(ev){
 
 function snapshot(){
     hideUIElements();
+    /**** attempt to fix render issue ****/
+    window.requestAnimationFrame();
+    /*************************************/
     let sheets = document.getElementsByClassName('datasheet');
     for(let sheet of sheets){
         html2canvas(sheet).then(
