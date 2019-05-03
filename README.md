@@ -5,8 +5,8 @@ editable, printable data cards for Warhammer models
 
 * inter-session persistence of created datasheets
 * ~~abilities entry~~
-* faction keyword entries
-* keyword entries
+* ~~faction keyword entries~~
+* ~~keyword entries~~
 * ~~wargear entry~~
 * ~~weapon table~~
 * consider adding markup support for certain fields
