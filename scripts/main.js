@@ -154,7 +154,7 @@ function setupInitialEventListeners(){
     let addProfileBtns = document.getElementsByClassName('add-profile');
     let addWeaponBtns = document.getElementsByClassName('add-weapon');
     for(let btn of [...addProfileBtns, ...addWeaponBtns]){
-        el.addEventListener('click', appendDataTableRow, {passive: true});
+        btn.addEventListener('click', appendDataTableRow, {passive: true});
     }
     let snapshotBtns = document.getElementsByClassName('snapshot-btn');
     for(let btn of snapshotBtns){
