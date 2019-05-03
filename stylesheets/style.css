@@ -148,6 +148,14 @@ main {
     width: 15%;
 }
 
+.faction-kw-input, .kw-input {
+    background-color: transparent;
+    border: none;
+    font-size: 1.05rem;
+    height: 2rem;
+    width: 80%;
+}
+
 .power-rating {
     align-items: center;
     background: url('../assets/icons/power_rating_icon.png') center no-repeat;
