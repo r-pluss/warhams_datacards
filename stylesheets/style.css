@@ -16,7 +16,7 @@ main {
     width: 100%;
 }
 
-.add-profile, .add-wargear, .add-weapon {
+.add-ability, .add-profile, .add-wargear, .add-weapon {
     background-color: transparent;
     border: solid 1px #2da780;
     border-radius: 50%;
@@ -32,7 +32,7 @@ main {
     width: 1em;
 }
 
-.add-profile:after, .add-wargear:after, .add-weapon:after {
+.add-ability:after, .add-profile:after, .add-wargear:after, .add-weapon:after {
     content: '+';
 }
 
@@ -216,7 +216,7 @@ main {
     width: 1em;
 }
 
-.remove-profile:after, .remove-wargear:after, .remove-weapon:after {
+.remove-ability, .remove-profile:after, .remove-wargear:after, .remove-weapon:after {
     content: '-';
 }
 
