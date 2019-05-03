@@ -89,13 +89,9 @@ const weaponFields = [
 function appendDataTableRow(ev){
     let tbody = ev.target.parentNode.children[0].children[1];
     if(tbody.parentNode.classList.contains('profile-table')){
-        tbody.appendChild(
-            makeNewDataTableRow('remove-profile', removeProfile, profileFields)
-        );
+        tbody.appendChild(makeNewDataTableRow('remove-profile', profileFields));
     }else if(tbody.parentNode.classList.contains('weapon-table')){
-        tbody.appendChild(
-            makeNewDataTableRow('remove-weapon', removeWeapon, weaponFields)
-        );
+        tbody.appendChild(makeNewDataTableRow('remove-weapon', weaponFields));
     }
     throw new Error('unrecognized data table type');
 }
