@@ -229,4 +229,5 @@ function snapshot(){
     }
 }
 
+vex.defaultOptions.className = 'vex-theme-flat-attack';
 setupInitialEventListeners();
