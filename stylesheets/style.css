@@ -32,7 +32,7 @@ main {
     width: 1em;
 }
 
-.add-profile:after {
+.add-profile:after, .add-weapon:after {
     content: '+';
 }
 
@@ -159,7 +159,7 @@ main {
     background-color: #b2bbb6;
 }
 
-.profiles {
+.profiles, .weapons {
     position: relative;
 }
 
