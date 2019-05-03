@@ -79,7 +79,7 @@ const weaponFields = [
         name: 'D'
     },
     {
-        classes: ['wname'],
+        classes: ['wname', 'align-left'],
         name: 'ABILITIES',
         placeholder: 'Special Properties'
     }
