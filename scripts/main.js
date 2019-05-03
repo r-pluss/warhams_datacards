@@ -53,13 +53,54 @@ const profileFields = [
     },
 ];
 
-function addProfile(ev){
+const weaponFields = [
+    {
+        classes: ['wname'],
+        name: 'WEAPON',
+        placeholder: 'Enter Weapon Name'
+    },
+    {
+        classes: ['wstat'],
+        name: 'Range'
+    },
+    {
+        classes: ['wstat'],
+        name: 'Type'
+    },
+    {
+        classes: ['wstat'],
+        name: 'S'
+    },
+    {
+        classes: ['wstat'],
+        name: 'AP'
+    },
+    {
+        classes: ['wstat'],
+        name: 'D'
+    },
+    {
+        classes: ['wname'],
+        name: 'ABILITIES',
+        placeholder: 'Special Properties'
+    }
+];
+
+function appendDataTableRow(ev){
     let tbody = ev.target.parentNode.children[0].children[1];
-    tbody.appendChild(makeProfileRow());
+    if(tbody.parentNode.classList.contains('profile-table')){
+        tbody.appendChild(
+            makeNewDataTableRow('remove-profile', removeProfile, profileFields)
+        );
+    }else if(tbody.parentNode.classList.contains('weapon-table')){
+        tbody.appendChild(
+            makeNewDataTableRow('remove-weapon', removeWeapon, weaponFields)
+        );
+    }
+    throw new Error('unrecognized data table type');
 }
 
 function changeBattlefieldRole(ev){
-    console.log(ev);
     let currentClass;
     let currentIndex;
     for(let cls of ev.target.classList){
@@ -71,7 +112,6 @@ function changeBattlefieldRole(ev){
             break;
         }
     }
-    console.log(currentClass);
     if(currentClass !== undefined){
         ev.target.classList.remove(currentClass);
         if(currentIndex === (battlefieldRoles.length - 1)){
@@ -82,41 +122,26 @@ function changeBattlefieldRole(ev){
     }
 }
 
-function hideUIElements(){
-    let els = document.getElementsByClassName('ui-only');
-    for(let el of els){
-        el.classList.add('hidden');
-    }
-}
 
-function makeProfileRow(){
+function makeNewDataTableRow(removeBtnClass, fieldList){
     let row = document.createElement('tr');
-    for(let fld of profileFields){
-        row.appendChild(makeProfileCell(fld.classes, fld.hasOwnProperty('placeholder') ? fld.placeholder : undefined))
+    for(let fld of fieldList){
+        row.appendChild(
+            makeDataTableCell(
+                fld.classes,
+                fld.hasOwnProperty('placeholder') ? fld.placeholder : undefined
+            )
+        );
     }
     let removeBtn = document.createElement('button');
-    removeBtn.classList.add('remove-profile');
+    removeBtn.classList.add(removeBtnClass);
     removeBtn.setAttribute('data-html2canvas-ignore', '');
-    removeBtn.addEventListener('click', removeProfile, {passive: true});
+    removeBtn.addEventListener('click', removeDataTableRow, {passive: true});
     row.appendChild(removeBtn);
     return row;
 }
 
-function makeProfileCell(classList, placeholder){
-    let cell = document.createElement('td');
-    for(let cls of classList){
-        cell.classList.add(cls);
-    }
-    let textarea = document.createElement('textarea');
-    textarea.setAttribute('rows', '1');
-    if(placeholder !== undefined){
-        textarea.setAttribute('placeholder', placeholder);
-    }
-    cell.appendChild(textarea);
-    return cell;
-}
-
-function removeProfile(ev){
+function removeDataTableRow(ev){
     let tr = ev.target.parentNode;
     tr.parentNode.removeChild(tr);
 }
@@ -133,13 +158,6 @@ function snapshot(){
                 a.click();
             }
         );
-    }
-}
-
-function unHideUIElements(){
-    let els = document.getElementsByClassName('ui-only');
-    for(let el of els){
-        el.classList.remove('hidden');
     }
 }
 
