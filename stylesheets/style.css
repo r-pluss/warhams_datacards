@@ -115,11 +115,6 @@ main {
     width: 15%;
 }
 
-.hidden {
-    display: none;
-    transform: translateZ(0); /*attempt to force rendering*/
-}
-
 .power-rating {
     align-items: center;
     background: url('../assets/icons/power_rating_icon.png') center no-repeat;
