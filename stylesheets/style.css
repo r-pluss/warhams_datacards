@@ -151,7 +151,6 @@ main {
     background-color: transparent;
     border: none;
     height: 100%;
-    resize: none;
     text-align: center;
     width: 100%;
 }
@@ -189,12 +188,30 @@ main {
     width: 1em;
 }
 
-.remove-profile:after, .remove-weapon:after {
+.remove-wargear {
+    background-color: transparent;
+    border: solid 1px #b32774;
+    border-radius: 50%;
+    color: #b32774;
+    cursor: pointer;
+    height: 1em;
+    font-size: 1em;
+    font-weight: 700;
+    line-height: 0.5em;
+    margin-top: 0.1em;
+    padding: 0;
+    position: absolute;
+    right: -5%;
+    width: 1em;
+}
+
+.remove-profile:after, .remove-wargear:after, .remove-weapon:after {
     content: '-';
 }
 
 .unit-composition textarea {
     background-color: transparent;
+    font-style: italic;
     padding: 0;
     resize: none;
     width: 85%;
@@ -213,8 +230,28 @@ main {
     font-weight: 700;
     height: 100%;
     padding: 0;
-    resize: none;
     width: 100%;
+}
+
+.wargear-item {
+    position: relative;
+}
+
+.wargear-item > input{
+    background-color: transparent;
+    border: none;
+    font-style: italic;
+    height: 100%;
+    margin-bottom: 0.3rem;
+    margin-top: 0.3rem;
+    text-align: left;
+    width: 100%;
+}
+
+.wargear-list {
+    margin-block-end: 0px;
+    margin-block-start: 0px;
+    width: 75%;
 }
 
 .weapon-table .wname {

@@ -96,6 +96,18 @@ function appendDataTableRow(ev){
     }
 }
 
+function appendListItem(ev){
+    let ul = ev.target.parentNode.nextSibling.nextSibling;
+    let li = document.createElement('li');
+    li.classList.add('wargear-item');
+    let input = document.createElement('input');
+    let removeBtn = document.createElement('button');
+    removeBtn.classList.add('remove-wargear');
+    removeBtn.addEventListener('click', removeListItem, {passive: true});
+    li.append(...[input, removeBtn]);
+    ul.appendChild(li);
+}
+
 function changeBattlefieldRole(ev){
     let currentClass;
     let currentIndex;
@@ -152,6 +164,11 @@ function removeDataTableRow(ev){
     tr.parentNode.removeChild(tr);
 }
 
+function removeListItem(ev){
+    let li = ev.target.parentNode;
+    li.parentNode.removeChild(li);
+}
+
 function setupInitialEventListeners(){
     let bfRoles = document.getElementsByClassName('battlefield-role');
     for(let el of bfRoles){
@@ -161,6 +178,10 @@ function setupInitialEventListeners(){
     let addWeaponBtns = document.getElementsByClassName('add-weapon');
     for(let btn of [...addProfileBtns, ...addWeaponBtns]){
         btn.addEventListener('click', appendDataTableRow, {passive: true});
+    }
+    let addWargearBtns = document.getElementsByClassName('add-wargear');
+    for(let btn of addWargearBtns){
+        btn.addEventListener('click', appendListItem, {passive: true});
     }
     let snapshotBtns = document.getElementsByClassName('snapshot-btn');
     for(let btn of snapshotBtns){
