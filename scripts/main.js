@@ -141,6 +141,27 @@ function makeDataTableCell(classList, placeholder){
     return cell;
 }
 
+function makeNewAbility(ev){
+    let userInput = {
+        name: undefined,
+        text: undefined
+    };
+    vex.dialog.prompt({
+        message: 'Enter ability name',
+        callback: function(val){
+            userInput.name = val;
+        }
+    });
+    console.log(userInput.name);
+    vex.dialog.prompt({
+        message: 'Enter ability description',
+        callback: function(val){
+            userInput.text = val;
+        }
+    });
+    console.log(userInput.text);
+}
+
 function makeNewDataTableRow(removeBtnClass, fieldList){
     let row = document.createElement('tr');
     for(let fld of fieldList){
@@ -170,6 +191,10 @@ function removeListItem(ev){
 }
 
 function setupInitialEventListeners(){
+    let addAbilityBtns = document.getElementsByClassName('add-ability');
+    for(let el of addAbilityBtns){
+        el.addEventListener('click', makeNewAbility, {passive: true});
+    }
     let bfRoles = document.getElementsByClassName('battlefield-role');
     for(let el of bfRoles){
         el.addEventListener('click', changeBattlefieldRole, {passive: true})
