@@ -142,7 +142,7 @@ main {
     color: #ccc;
 }
 
-.profile-table {
+.profile-table, .weapon-table {
     border-collapse: collapse;
     width: 100%;
 }
@@ -155,7 +155,7 @@ main {
     width: 100%;
 }
 
-.profile-table thead {
+.profile-table thead, .weapon-table thead {
     background-color: #b2bbb6;
 }
 
@@ -260,13 +260,4 @@ main {
 
 .weapon-table  .wstat {
     width: 10.4%;
-}
-
-.weapon-table {
-    border-collapse: collapse;
-    width: 100%;
-}
-
-.weapon-table thead {
-    background-color: #b2bbb6;
 }
