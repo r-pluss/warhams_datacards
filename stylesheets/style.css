@@ -188,7 +188,7 @@ main {
     width: 1em;
 }
 
-.remove-profile:after, .weapon-profile:after {
+.remove-profile:after, .remove-weapon:after {
     content: '-';
 }
 
