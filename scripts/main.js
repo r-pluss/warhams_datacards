@@ -52,7 +52,6 @@ const profileFields = [
         name: 'Sv'
     },
 ];
-
 const weaponFields = [
     {
         classes: ['wname'],
@@ -92,8 +91,9 @@ function appendDataTableRow(ev){
         tbody.appendChild(makeNewDataTableRow('remove-profile', profileFields));
     }else if(tbody.parentNode.classList.contains('weapon-table')){
         tbody.appendChild(makeNewDataTableRow('remove-weapon', weaponFields));
+    }else{
+        throw new Error('unrecognized data table type');
     }
-    throw new Error('unrecognized data table type');
 }
 
 function changeBattlefieldRole(ev){
