@@ -85,6 +85,22 @@ const weaponFields = [
     }
 ];
 
+function appendAbility(list, config){
+    let li = document.createElement('li');
+    li.classList.add('ability-item');
+    let abName = document.createElement('div');
+    let abText = document.createElement('div');
+    abName.appendChild(document.createTextNode(config.name));
+    abName.classList.add('ability-name');
+    abText.appendChild(document.createTextNode(config.text));
+    abText.classList.add('ability-text');
+    let removeBtn = document.createElement('button');
+    removeBtn.classList.add('remove-ability');
+    removeBtn.addEventListener('click', removeListItem, {passive: true});
+    li.append(...[abName, abText, removeBtn]);
+    list.appendChild(li);
+}
+
 function appendDataTableRow(ev){
     let tbody = ev.target.parentNode.children[0].children[1];
     if(tbody.parentNode.classList.contains('profile-table')){
@@ -149,17 +165,26 @@ function makeNewAbility(ev){
     vex.dialog.prompt({
         message: 'Enter ability name',
         callback: function(val){
-            userInput.name = val;
+            if(val !== undefined && val.length > 0){
+                userInput.name = val;
+                console.log(`Ability name: ${userInput.name}`);
+                vex.dialog.prompt({
+                    message: 'Enter ability description',
+                    callback: function(val){
+                        if(val !== undefined && val.length > 0){
+                            userInput.text = val;
+                            console.log(`Ability text: ${userInput.text}`);
+                            console.log(ev.target);
+                            appendAbility(
+                                ev.target.parentNode.nextSibling.nextSibling,
+                                userInput
+                            );
+                        }
+                    }
+                });
+            }
         }
     });
-    console.log(userInput.name);
-    vex.dialog.prompt({
-        message: 'Enter ability description',
-        callback: function(val){
-            userInput.text = val;
-        }
-    });
-    console.log(userInput.text);
 }
 
 function makeNewDataTableRow(removeBtnClass, fieldList){

@@ -4,7 +4,7 @@ editable, printable data cards for Warhammer models
 ## todo
 
 * inter-session persistence of created datasheets
-* abilities entry
+* ~~abilities entry~~
 * faction keyword entries
 * keyword entries
 * ~~wargear entry~~
