@@ -146,6 +146,22 @@ function removeDataTableRow(ev){
     tr.parentNode.removeChild(tr);
 }
 
+function setupInitialEventListeners(){
+    let bfRoles = document.getElementsByClassName('battlefield-role');
+    for(let el of bfRoles){
+        el.addEventListener('click', changeBattlefieldRole, {passive: true})
+    }
+    let addProfileBtns = document.getElementsByClassName('add-profile');
+    let addWeaponBtns = document.getElementsByClassName('add-weapon');
+    for(let btn of [...addProfileBtns, ...addWeaponBtns]){
+        el.addEventListener('click', appendDataTableRow, {passive: true});
+    }
+    let snapshotBtns = document.getElementsByClassName('snapshot-btn');
+    for(let btn of snapshotBtns){
+        btn.addEventListener('click', snapshot, {passive: true})
+    }
+}
+
 function snapshot(){
     let sheets = document.getElementsByClassName('datasheet');
     for(let sheet of sheets){
@@ -161,16 +177,4 @@ function snapshot(){
     }
 }
 
-let bfRoles = document.getElementsByClassName('battlefield-role');
-for(let el of bfRoles){
-    el.addEventListener('click', changeBattlefieldRole, {passive: true})
-}
-let addProfileBtns = document.getElementsByClassName('add-profile');
-for(let el of addProfileBtns){
-    el.addEventListener('click', addProfile, {passive: true});
-}
-
-let snapshotBtns = document.getElementsByClassName('snapshot-btn');
-for(let btn of snapshotBtns){
-    btn.addEventListener('click', snapshot, {passive: true})
-}
+setupInitialEventListeners();
