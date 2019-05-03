@@ -16,3 +16,4 @@ editable, printable data cards for Warhammer models
 * ~~alternating row colors for tables~~
 * passable typography
 * support for models that characteristics that change with wound levels
+* support for units that have keywords that apply to separate models within the unit
