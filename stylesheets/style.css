@@ -36,6 +36,10 @@ main {
     content: '+';
 }
 
+.align-left {
+    text-align: left;
+}
+
 .battlefield-role {
     height: 65px;
     width: 65px;
@@ -147,12 +151,24 @@ main {
     width: 100%;
 }
 
+.profile-table tbody tr:nth-child(even), .weapon-table tbody tr:nth-child(even){
+    background-color: #c5c5d2;
+}
+
+.profile-table tbody tr:nth-child(odd), .weapon-table tbody tr:nth-child(odd){
+    background-color: #e6e6e6;
+}
+
 .profile-table input, .weapon-table input {
     background-color: transparent;
     border: none;
     height: 100%;
     text-align: center;
     width: 100%;
+}
+
+.profile-table td.align-left input, .weapon-table td.align-left input {
+    text-align: left;
 }
 
 .profile-table thead, .weapon-table thead {

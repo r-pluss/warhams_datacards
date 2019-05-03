@@ -11,7 +11,7 @@ const battlefieldRoles = [
 ];
 const profileFields = [
     {
-        classes: ['wname'],
+        classes: ['wname', 'align-left'],
         name: 'NAME',
         placeholder: 'Enter Model Name'
     },
@@ -54,7 +54,7 @@ const profileFields = [
 ];
 const weaponFields = [
     {
-        classes: ['wname'],
+        classes: ['wname', 'align-left'],
         name: 'WEAPON',
         placeholder: 'Enter Weapon Name'
     },
