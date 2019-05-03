@@ -14,3 +14,4 @@ editable, printable data cards for Warhammer models
 * ~~remove ui dev borders~~
 * ~~hide append/remove buttons from saved image~~
 * alternating row colors for tables
+* passable typograpghy
