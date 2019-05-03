@@ -118,6 +118,16 @@ function changeBattlefieldRole(ev){
     }
 }
 
+function makeDataTableCell(classList, placeholder){
+    let cell = document.createElement('td');
+    cell.classList.add(...classList);
+    let input = document.createElement('input');
+    if(placeholder !== undefined){
+        input.setAttribute('placeholder', placeholder);
+    }
+    cell.appendChild(input);
+    return cell;
+}
 
 function makeNewDataTableRow(removeBtnClass, fieldList){
     let row = document.createElement('tr');
