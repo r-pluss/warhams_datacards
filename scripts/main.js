@@ -96,6 +96,7 @@ function appendAbility(list, config){
     abText.classList.add('ability-text');
     let removeBtn = document.createElement('button');
     removeBtn.classList.add('remove-ability');
+    removeBtn.setAttribute('data-html2canvas-ignore', '');
     removeBtn.addEventListener('click', removeListItem, {passive: true});
     li.append(...[abName, abText, removeBtn]);
     list.appendChild(li);
@@ -119,6 +120,7 @@ function appendListItem(ev){
     let input = document.createElement('input');
     let removeBtn = document.createElement('button');
     removeBtn.classList.add('remove-wargear');
+    removeBtn.setAttribute('data-html2canvas-ignore', '');
     removeBtn.addEventListener('click', removeListItem, {passive: true});
     li.append(...[input, removeBtn]);
     ul.appendChild(li);
