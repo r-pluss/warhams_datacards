@@ -146,7 +146,7 @@ main {
     width: 100%;
 }
 
-.profile-table textarea {
+.profile-table input, .weapon-table input {
     background-color: transparent;
     border: none;
     height: 100%;
