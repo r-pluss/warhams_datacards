@@ -1,0 +1,299 @@
+
+.datasheet {
+    display: grid;
+    /*grid-gap: 5px;*/
+    grid-template-areas: 'bt bt bt'
+                         'bl db br'
+                         'bb bb bb';
+    grid-template-columns: min-content 1fr min-content;
+    grid-template-rows: 10px 1fr 10px;
+}
+
+.datasheet-body {
+    border: 1px dotted black;
+    grid-area: db;
+}
+
+.datasheet-body > section {
+    display: grid;
+    grid-template-columns: 20px 1fr 20px;
+    grid-template-rows: auto;
+}
+
+.datasheet-body > section > div:nth-child(2){
+    display: grid;
+    grid-template-columns: 1fr 9fr;
+}
+
+.datasheet-border-bottom{
+    border: 1px dotted red;
+    grid-area: bb;
+}
+
+.datasheet-border-left{
+    border: 1px dotted red;
+    grid-area: bl;
+}
+
+.datasheet-border-right{
+    border: 1px dotted red;
+    grid-area: br;
+}
+
+.datasheet-border-top {
+    border: 1px dotted red;
+    grid-area: bt;
+}
+
+.datasheet-border-left, .datasheet-border-right {
+    width: 10px;
+}
+
+/************ general helper classes ************/
+.add-btn {
+    background: url(https://r-pluss.github.io/warhams_datacards/assets/icons/add_btn_icon.png) center no-repeat;
+    cursor: pointer;
+    height: 20px;
+    width: 20px;
+}
+
+.remove-btn {
+    background: url(https://r-pluss.github.io/warhams_datacards/assets/icons/remove_btn_icon.png) center no-repeat;
+    cursor: pointer;
+    height: 20px;
+    width: 20px;
+}
+
+.section-label {
+    align-self: start;
+    justify-self: center;
+}
+
+.section-left-gutter {
+    align-items: start;
+    display: flex;
+    justify-content: center;
+}
+/************************************************/
+
+/******************* sections *******************/
+.header {
+    
+}
+/******* sub-sections *******/
+.header-content {
+    align-items: center;
+    grid-template-columns: 65px 65px 1fr!important;
+}
+
+.battlefield-role {
+    height: 65px;
+}
+
+.power-rating {
+    align-items: center;
+    display: flex;
+    height: 65px;
+    justify-content: center;
+}
+
+.power-rating > input {
+    background: transparent;
+    border: none;
+    font-weight: 700;
+    text-align: center;
+    width: 90%;
+}
+
+.unit-name {
+    height: 75%;
+    text-align: center;
+}
+/****************************/
+
+.profiles {
+    
+}
+/******* sub-sections *******/
+.profiles-content {
+    grid-template-columns: 1fr!important;
+    grid-template-rows: auto;
+}
+
+.profile-header {
+    display: grid;
+    grid-template-columns: 3fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+.profile-field {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.profile-field:first-child {
+    justify-content: left;
+    margin-left: 2rem;
+}
+
+.profile-field > input {
+    text-align: center;
+    width: 100%;
+}
+
+.profile-field:first-child > input {
+    text-align: left;
+}
+
+.profile-item {
+    display: grid;
+    grid-template-columns: 3fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    position: relative;
+}
+
+.remove-profile-btn {
+    position: absolute;
+    right: -20px;
+    top: 0px;
+}
+/****************************/
+
+.unit-composition {
+    height: min-content;
+}
+/******* sub-sections *******/
+.unit-composition-label:after {
+    content: 'Unit Composition';
+}
+
+.unit-composition-textarea {
+    resize: none;
+    /*refer to https://codepen.io/vsync/pen/frudD for sizing solution inspiration*/
+}
+/****************************/
+
+.weapons {
+    
+}
+/******* sub-sections *******/
+.weapons-content {
+    grid-template-columns: 1fr!important;
+}
+
+.weapons-header {
+    display: grid;
+    grid-template-columns: 2.5fr 1fr 1fr 1fr 1fr 1fr 3fr;
+}
+
+.weapon-field {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+}
+
+.weapon-field:first-child {
+    justify-content: left;
+    margin-left: 2rem;
+}
+
+.weapon-field:last-child {
+    justify-content: left;
+}
+
+.weapon-field > input {
+    text-align: center;
+    width: 100%;
+}
+
+.weapon-field:first-child > input {
+    text-align: left;
+}
+
+.weapon-field:last-child > input {
+    text-align: left;
+}
+
+.weapon-item {
+    display: grid;
+    grid-template-columns: 2.5fr 1fr 1fr 1fr 1fr 1fr 3fr;
+    position: relative;
+}
+
+.remove-weapon-btn {
+    position: absolute;
+    right: -20px;
+    top: 0px;
+}
+/****************************/
+
+.wargear {
+    
+}
+/******* sub-sections *******/
+.wargear-content {
+    
+}
+
+.wargear-label:after {
+    content: 'Wargear Options';
+}
+
+.wargear-list {
+    list-style-type: disc;
+    margin-block-end: 0px;
+    margin-block-start: 0px;
+}
+
+.wargear-item {
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.wargear-item > input {
+    background: transparent;
+    border: none;
+    font-style: italic;
+    text-align: left;
+    width: 100%;
+}
+
+.remove-wargear-btn {
+    position: absolute;
+    right: -20px;
+    top: 0px;
+}
+/****************************/
+
+.abilities {
+    
+}
+/******* sub-sections *******/
+.abilities-content {
+    
+}
+
+.abilities-label:after {
+    content: 'Abilities';
+}
+/****************************/
+
+.faction-keywords {
+    
+}
+/******* sub-sections *******/
+.faction-keywords-label:after {
+    content: 'Faction Keywords';
+}
+/****************************/
+
+.keywords {
+    
+}
+/******* sub-sections *******/
+.keywords-label:after {
+    content: 'Keywords';
+}
+/****************************/
+
+/************************************************/
