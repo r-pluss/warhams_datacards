@@ -78,7 +78,7 @@
 
 /******************* sections *******************/
 .header {
-    
+
 }
 /******* sub-sections *******/
 .header-content {
@@ -112,7 +112,7 @@
 /****************************/
 
 .profiles {
-    
+
 }
 /******* sub-sections *******/
 .profiles-content {
@@ -173,7 +173,7 @@
 /****************************/
 
 .weapons {
-    
+
 }
 /******* sub-sections *******/
 .weapons-content {
@@ -228,11 +228,11 @@
 /****************************/
 
 .wargear {
-    
+
 }
 /******* sub-sections *******/
 .wargear-content {
-    
+
 }
 
 .wargear-label:after {
@@ -266,20 +266,47 @@
 /****************************/
 
 .abilities {
-    
+
 }
 /******* sub-sections *******/
 .abilities-content {
-    
+
 }
 
 .abilities-label:after {
     content: 'Abilities';
 }
+
+.abilities-list {
+    list-style-type: none;
+    margin-block-end: 0px;
+    margin-block-start: 0px;
+}
+
+.ability-item {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    position: relative;
+}
+
+.ability-name {
+    font-weight: 700;
+    margin-right: 10px;
+}
+
+.ability-name:after {
+    content: ':';
+}
+
+.remove-ability-btn {
+    position: absolute;
+    right: -20px;
+    top: 0px;
+}
 /****************************/
 
 .faction-keywords {
-    
+
 }
 /******* sub-sections *******/
 .faction-keywords-label:after {
@@ -288,7 +315,7 @@
 /****************************/
 
 .keywords {
-    
+
 }
 /******* sub-sections *******/
 .keywords-label:after {
