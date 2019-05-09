@@ -57,7 +57,7 @@ const dataGrids = {
         itemClasses: ['profile-item'],
         removeBtn: {
             classList: ['remove-btn', 'remove-profile-btn'],
-            events:[{func: removeDataGridRow, type: 'click'}]
+            events:[{func: removeThisChild, type: 'click'}]
         }
     },
     weapon: {
@@ -98,7 +98,7 @@ const dataGrids = {
         itemClasses: ['weapon-item'],
         removeBtn: {
             classList: ['remove-btn', 'remove-weapon-btn'],
-            events:[{func: removeDataGridRow, type: 'click'}]
+            events:[{func: removeThisChild, type: 'click'}]
         }
     }
 };
@@ -115,7 +115,7 @@ function appendAbility(list, config){
     let removeBtn = document.createElement('div');
     removeBtn.classList.add(...['remove-btn', 'remove-ability-btn']);
     removeBtn.setAttribute('data-html2canvas-ignore', '');
-    removeBtn.addEventListener('click', removeListItem, {passive: true});
+    removeBtn.addEventListener('click', removeThisChild, {passive: true});
     li.append(...[abName, abText, removeBtn]);
     list.appendChild(li);
 }
@@ -139,7 +139,7 @@ function appendWargearItem(ev){
     let removeBtn = document.createElement('div');
     removeBtn.classList.add(...['remove-btn', 'remove-wargear-btn']);
     removeBtn.setAttribute('data-html2canvas-ignore', '');
-    removeBtn.addEventListener('click', removeListItem, {passive: true});
+    removeBtn.addEventListener('click', removeThisChild, {passive: true});
     li.append(...[input, removeBtn]);
     ul.appendChild(li);
 }
@@ -236,9 +236,9 @@ function makeNewDataGridRow(config){
     return row;
 }
 
-function removeListItem(ev){
-    let li = ev.target.parentNode;
-    li.parentNode.removeChild(li);
+function removeThisChild(ev){
+    let child = ev.target.parentNode;
+    child.parentNode.removeChild(child);
 }
 
 function setupInitialEventListeners(){
