@@ -79,14 +79,14 @@
 
 /************ general helper classes ************/
 .add-btn {
-    background: url(https://r-pluss.github.io/warhams_datacards/assets/icons/add_btn_icon.png) center no-repeat;
+    background: url('../assets/icons/add_btn_icon.png') center no-repeat;
     cursor: pointer;
     height: 20px;
     width: 20px;
 }
 
 .remove-btn {
-    background: url(https://r-pluss.github.io/warhams_datacards/assets/icons/remove_btn_icon.png) center no-repeat;
+    background: url('../assets/icons/remove_btn_icon.png') center no-repeat;
     cursor: pointer;
     height: 20px;
     width: 20px;
@@ -117,13 +117,48 @@
 }
 
 .battlefield-role {
-    background: url(https://r-pluss.github.io/warhams_datacards/assets/icons/elite_icon.png) center no-repeat;
     height: 65px;
+}
+
+.battlefield-role.dedicated_transport {
+    background: url('../assets/icons/dedicated_transport_icon.png') center no-repeat;
+}
+
+.battlefield-role.elite {
+    background: url('../assets/icons/elite_icon.png') center no-repeat;
+}
+
+.battlefield-role.fast_attack {
+    background: url('../assets/icons/fast_attack_icon.png') center no-repeat;
+}
+
+.battlefield-role.flyer {
+    background: url('../assets/icons/flyer_icon.png') center no-repeat;
+}
+
+.battlefield-role.fortification {
+    background: url('../assets/icons/fortification_icon.png') center no-repeat;
+}
+
+.battlefield-role.heavy_support {
+    background: url('../assets/icons/heavy_support_icon.png') center no-repeat;
+}
+
+.battlefield-role.hq {
+    background: url('../assets/icons/hq_icon.png') center no-repeat;
+}
+
+.battlefield-role.lord_of_war {
+    background: url('../assets/icons/lord_of_war_icon.png') center no-repeat;
+}
+
+.battlefield-role.troop {
+    background: url('../assets/icons/troop_icon.png') center no-repeat;
 }
 
 .power-rating {
     align-items: center;
-    background: url(https://github.com/r-pluss/warhams_datacards/raw/grid-based-theming/assets/icons/power_rating_icon_v3.png) center no-repeat;
+    background: url('../assets/icons/power_rating_icon_v3.png') center no-repeat;
     display: flex;
     height: 65px;
     justify-content: center;
