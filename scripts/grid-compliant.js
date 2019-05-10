@@ -105,7 +105,12 @@ const dataGrids = {
                 fieldName: 'Abilities',
                 fieldClasses: ['weapon-field'],
                 input: 'textarea',
-                inputEvents: [],
+                inputEvents: [
+                    {
+                        func: dynamicallySizeTextarea,
+                        type: 'input'
+                    }
+                ],
                 placeholder: '--'
             }
         ],
@@ -179,14 +184,10 @@ function changeBattlefieldRole(ev){
     }
 }
 
-function dynamicallySizeTextarea(textarea){
-    textarea.addEventListener(
-        'input',
-        function(ev){
-            this.style.height = 'auto';
-            this.style.height = `${this.scrollHeight}px`;
-        }
-    );
+
+function dynamicallySizeTextarea(ev){
+    this.style.height = 'auto';
+    this.style.height = `${this.scrollHeight}px`;
 }
 
 function makeDataGridCell(fld){
@@ -254,7 +255,7 @@ function makeNewDataGridRow(config){
     removeBtn.setAttribute('data-html2canvas-ignore', '');
     for(let ev of config.removeBtn.events){
         removeBtn.addEventListener(
-            ev.type, ev.func, ev.config || {passive: true}
+            ev.type, ev.func, ev.config || false
         );
     }
     row.appendChild(removeBtn);
@@ -285,8 +286,8 @@ function setupInitialEventListeners(){
         btn.addEventListener('click', appendWargearItem, {passive: true});
     }
     for(let sht of document.getElementsByClassName('datasheet')){
-        for(let textarea of sht.querySelector('textarea')){
-            dynamicallySizeTextarea(textarea);
+        for(let textarea of sht.querySelectorAll('textarea')){
+            textarea.addEventListener('input', dynamicallySizeTextarea);
         }
     }
     let snapshotBtns = document.getElementsByClassName('snapshot-btn');
