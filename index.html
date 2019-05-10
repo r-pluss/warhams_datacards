@@ -1,90 +1,119 @@
 <!doctype html>
 <html>
 <head>
-    <link rel= 'stylesheet' href= './stylesheets/vex_4.0.1.css'>
-    <link rel= 'stylesheet' href= './stylesheets/vex-theme-flat-attack_4.0.1.css'>
-    <link rel= 'stylesheet' href= './stylesheets/style.css'>
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Comfortaa|Playfair+Display'>
+    <link rel='stylesheet' href='./stylesheets/vex_4.0.1.css'>
+    <link rel='stylesheet' href='./stylesheets/vex-theme-flat-attack_4.0.1.css'>
+    <link rel='stylesheet' href='./stylesheets/grid-base-theme.css'>
 </head>
 <body>
     <main>
         <div class='datasheet'>
-            <section class='header'>
-                <div class='battlefield-role troop'></div>
-                <div class='power-rating'>
-                    <input maxlength='4' placeholder='000' rows='1'></input>
-                </div>
-                <div class='unit-name'>
-                    <input placeholder='Enter Unit Name' rows='1'></input>
-                </div>
-            </section>
-            <section class='profiles'>
-                <table class='profile-table'>
-                    <thead>
-                        <tr>
-                            <th class='wname align-left'>NAME</th>
-                            <th class='wstat'>M</th>
-                            <th class='wstat'>WS</th>
-                            <th class='wstat'>BS</th>
-                            <th class='wstat'>S</th>
-                            <th class='wstat'>T</th>
-                            <th class='wstat'>W</th>
-                            <th class='wstat'>A</th>
-                            <th class='wstat'>Ld</th>
-                            <th class='wstat'>Sv</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    </tbody>
-                </table>
-                <button class='add-profile' data-html2canvas-ignore></button>
-            </section>
-            <section class='unit-composition'>
-                <div class='label'>UNIT COMPOSITION</div>
-                <textarea placeholder='Enter unit composition here'></textarea>
-            </section>
-            <section class='weapons'>
-                <table class='weapon-table'>
-                    <thead>
-                        <tr>
-                            <th class='wname align-left'>WEAPON</th>
-                            <th class='wstat'>Range</th>
-                            <th class='wstat'>Type</th>
-                            <th class='wstat'>S</th>
-                            <th class='wstat'>AP</th>
-                            <th class='wstat'>D</th>
-                            <th class='wname align-left'>ABILITIES</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    </tbody>
-                </table>
-                <button class='add-weapon' data-html2canvas-ignore></button>
-            </section>
-            <section class='wargear-options'>
-                <div class='label'>WARGEAR OPTIONS
-                    <button class= 'add-wargear' data-html2canvas-ignore></button>
-                </div>
-                <ul class='wargear-list'></ul>
-            </section>
-            <section class='abilities'>
-                <div class='label'>ABILITIES
-                    <button class= 'add-ability' data-html2canvas-ignore></button>
-                </div>
-                <ul class= 'ability-list'></ul>
-            </section>
-            <section class='faction-keywords'>
-               <div class='label'>FACTION KEYWORDS</div>
-               <input class= 'faction-kw-input' placeholder= 'Enter Faction Keywords'></input>
-           </section>
-           <section class='keywords'>
-               <div class='label'>KEYWORDS</div>
-               <input class= 'faction-kw-input' placeholder= 'Enter Keywords'></input>
-           </section>
+            <div class='datasheet-border-top'></div>
+            <div class='datasheet-border-left'></div>
+            <div class='datasheet-body'>
+                <section class='header'>
+                    <div class='section-left-gutter'></div>
+                    <div class='header-content'>
+                        <div class='battlefield-role'></div>
+                        <div class='power-rating'>
+                            <input maxlength='4' placeholder='000' rows='1'>
+                        </div>
+                        <input class='unit-name' placeholder='Enter Unit Name'>
+                    </div>
+                    <div class='section-right-gutter'></div>
+                </section>
+                <section class='profiles'>
+                    <div class='section-left-gutter'>
+                        <div class='add-btn add-profile-btn' data-html2canvas-ignore></div>
+                    </div>
+                    <div class='profiles-content'>
+                        <div class='profile-header'>
+                            <div class='profile-field'>Name</div>
+                            <div class='profile-field'>M</div>
+                            <div class='profile-field'>WS</div>
+                            <div class='profile-field'>BS</div>
+                            <div class='profile-field'>S</div>
+                            <div class='profile-field'>T</div>
+                            <div class='profile-field'>W</div>
+                            <div class='profile-field'>A</div>
+                            <div class='profile-field'>Ld</div>
+                            <div class='profile-field'>Sv</div>
+                        </div>
+                    </div>
+                    <div class='section-right-gutter'></div>
+                </section>
+                <section class='unit-composition'>
+                    <div class='section-left-gutter'></div>
+                    <div class='unit-composition-content'>
+                        <div class='section-label unit-composition-label'></div>
+                        <textarea class='unit-composition-textarea' placeholder='Describe the models in this unit'></textarea>
+                    </div>
+                    <div class='section-right-gutter'></div>
+                </section>
+                <section class='weapons'>
+                    <div class='section-left-gutter'>
+                        <div class='add-btn add-weapon-btn' data-html2canvas-ignore></div>
+                    </div>
+                    <div class='weapons-content'>
+                        <div class='weapons-header'>
+                            <div class='weapon-field'>Weapon</div>
+                            <div class='weapon-field'>Range</div>
+                            <div class='weapon-field'>Type</div>
+                            <div class='weapon-field'>S</div>
+                            <div class='weapon-field'>AP</div>
+                            <div class='weapon-field'>D</div>
+                            <div class='weapon-field'>Abilities</div>
+                        </div>
+                    </div>
+                    <div class='section-right-gutter'></div>
+                </section>
+                <section class='wargear'>
+                    <div class='section-left-gutter'>
+                        <div class='add-btn add-wargear-btn' data-html2canvas-ignore></div>
+                    </div>
+                    <div class='wargear-content'>
+                        <div class='section-label wargear-label'></div>
+                        <ul class='wargear-list'>
+                        </ul>
+                    </div>
+                    <div class='section-right-gutter'></div>
+                </section>
+                <section class='abilities'>
+                    <div class='section-left-gutter'>
+                        <div class='add-btn add-ability-btn' data-html2canvas-ignore></div>
+                    </div>
+                    <div class='abilities-content'>
+                        <div class='section-label abilities-label'></div>
+                        <ul clas='abilities-list'>
+                        </ul>
+                    </div>
+                    <div class='section-right-gutter'></div>
+                </section>
+                <section class='faction-keywords'>
+                    <div class='section-left-gutter'></div>
+                    <div class='faction-keywords-content'>
+                        <div class='section-label faction-keywords-label'></div>
+                        <input placeholder='Enter any faction keywords separated by a comma' type='text'>
+                    </div>
+                    <div class='section-right-gutter'></div>
+                </section>
+                <section class='keywords'>
+                    <div class='section-left-gutter'></div>
+                    <div class='keywords-content'>
+                        <div class='section-label keywords-label'></div>
+                        <input placeholder='Enter any keywords separated by a comma' type='text'>
+                    </div>
+                    <div class='section-right-gutter'></div>
+                </section>
+            </div>
+            <div class='datasheet-border-right'></div>
+            <div class='datasheet-border-bottom'></div>
         </div>
     </main>
     <button class= 'snapshot-btn'>Save as Image</button>
     <script src= 'https://github.com/niklasvh/html2canvas/releases/download/v1.0.0-rc.1/html2canvas.min.js'></script>
     <script src= './scripts/vex.combined_4.1.0.min.js'></script>
-    <script src= './scripts/main.js'></script>
+    <script src= './scripts/grid-compliant.js'></script>
 </body>
 </html>

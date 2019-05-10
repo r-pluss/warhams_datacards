@@ -1,0 +1,383 @@
+
+.datasheet {
+    display: grid;
+    grid-template-areas: 'bt bt bt'
+                         'bl db br'
+                         'bb bb bb';
+    grid-template-columns: min-content 1fr min-content;
+    grid-template-rows: 10px 1fr 10px;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16),
+                0 3px 1px -2px rgba(0, 0, 0, 0.12),
+                0 1px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+.datasheet-body {
+    border-color: #525252;
+    border-style: solid;
+    border-width: 2px 0px 2px 0px;
+    font-family: 'Comfortaa';
+    font-variant: small-caps;
+    grid-area: db;
+}
+
+.datasheet-body input, .datasheet-body textarea {
+    border: none;
+}
+
+.datasheet-body > section {
+    display: grid;
+    grid-template-columns: 20px 1fr 20px;
+    grid-template-rows: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.datasheet-body > section:not(:last-child){
+    border-bottom: 1px dotted black;
+}
+
+.datasheet-body > section > div:nth-child(2){
+    display: grid;
+    grid-template-columns: 1fr 8fr;
+}
+
+.datasheet-border-bottom{
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+    border-color: #525252;
+    border-style: solid;
+    border-width: 0px 2px 2px 2px;
+    grid-area: bb;
+}
+
+.datasheet-border-left{
+    border-color: #525252;
+    border-style: solid;
+    border-width: 0px 2px 0px 2px;
+    grid-area: bl;
+}
+
+.datasheet-border-right{
+    border-color: #525252;
+    border-style: solid;
+    border-width: 0px 2px 0px 2px;
+    grid-area: br;
+}
+
+.datasheet-border-top {
+    border-color: #525252;
+    border-style: solid;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+    border-width: 2px 2px 0px 2px;
+    grid-area: bt;
+}
+
+.datasheet-border-left, .datasheet-border-right {
+    width: 10px;
+}
+
+/************ general helper classes ************/
+.add-btn {
+    background: url(https://r-pluss.github.io/warhams_datacards/assets/icons/add_btn_icon.png) center no-repeat;
+    cursor: pointer;
+    height: 20px;
+    width: 20px;
+}
+
+.remove-btn {
+    background: url(https://r-pluss.github.io/warhams_datacards/assets/icons/remove_btn_icon.png) center no-repeat;
+    cursor: pointer;
+    height: 20px;
+    width: 20px;
+}
+
+.section-label {
+    align-self: start;
+    font-weight: 700;
+    justify-self: left;
+    margin-left: 2rem;
+}
+
+.section-left-gutter {
+    align-items: start;
+    display: flex;
+    justify-content: center;
+}
+/************************************************/
+
+/******************* sections *******************/
+.header {
+
+}
+/******* sub-sections *******/
+.header-content {
+    align-items: center;
+    grid-template-columns: 65px 65px 1fr!important;
+}
+
+.battlefield-role {
+    background: url(https://r-pluss.github.io/warhams_datacards/assets/icons/elite_icon.png) center no-repeat;
+    height: 65px;
+}
+
+.power-rating {
+    align-items: center;
+    background: url(https://github.com/r-pluss/warhams_datacards/raw/grid-based-theming/assets/icons/power_rating_icon_v3.png) center no-repeat;
+    display: flex;
+    height: 65px;
+    justify-content: center;
+}
+
+.power-rating > input {
+    background: transparent;
+    border: none;
+    font-weight: 700;
+    text-align: center;
+    width: 90%;
+}
+
+.unit-name {
+    font-family: 'Playfair Display';
+    font-size: 1.75rem;
+    font-weight: 700;
+    height: 75%;
+    text-align: center;
+}
+/****************************/
+
+.profiles {
+
+}
+/******* sub-sections *******/
+.profiles-content {
+    grid-template-columns: 1fr!important;
+    grid-template-rows: auto;
+}
+
+.profile-header {
+    display: grid;
+    font-weight: 700;
+    grid-template-columns: 3fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+.profile-field {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.profile-field:first-child {
+    justify-content: left;
+    margin-left: 2rem;
+}
+
+.profile-field > input {
+    background: transparent;
+    font-family: inherit;
+    text-align: center;
+    width: 100%;
+}
+
+.profile-field:first-child > input {
+    text-align: left;
+}
+
+.profile-item {
+    display: grid;
+    grid-template-columns: 3fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    margin-top: 10px;
+    position: relative;
+}
+
+.profile-item:nth-of-type(even){
+    background-color: #eaeaea;
+}
+
+.remove-profile-btn {
+    position: absolute;
+    right: -20px;
+    top: 0px;
+}
+/****************************/
+
+.unit-composition {
+    height: min-content;
+}
+/******* sub-sections *******/
+.unit-composition-label:after {
+    content: 'Unit Composition';
+}
+
+.unit-composition-textarea {
+    box-sizing: padding-box;
+    font-style: italic;
+    overflow: hidden;
+    resize: none;
+}
+/****************************/
+
+.weapons {
+
+}
+/******* sub-sections *******/
+.weapons-content {
+    grid-template-columns: 1fr!important;
+}
+
+.weapons-header {
+    display: grid;
+    font-weight: 700;
+    grid-template-columns: 2.5fr 1fr 1fr 1fr 1fr 1fr 3fr;
+}
+
+.weapon-field {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+}
+
+.weapon-field:first-child {
+    justify-content: left;
+    margin-left: 2rem;
+}
+
+.weapon-field:last-child {
+    justify-content: left;
+}
+
+.weapon-field > input {
+    background: transparent;
+    text-align: center;
+    width: 100%;
+}
+
+.weapon-field > textarea {
+    background: transparent;
+    resize: none;
+    width: 100%;
+}
+
+.weapon-field:first-child > input {
+    text-align: left;
+}
+
+.weapon-field:last-child > textarea {
+    text-align: left;
+}
+
+.weapon-item {
+    display: grid;
+    grid-template-columns: 2.5fr 1fr 1fr 1fr 1fr 1fr 3fr;
+    position: relative;
+}
+
+.weapon-item:nth-of-type(even){
+    background-color: #eaeaea;
+}
+
+.remove-weapon-btn {
+    position: absolute;
+    right: -20px;
+    top: 0px;
+}
+/****************************/
+
+.wargear {
+
+}
+/******* sub-sections *******/
+.wargear-content {
+
+}
+
+.wargear-label:after {
+    content: 'Wargear Options';
+}
+
+.wargear-list {
+    list-style-type: disc;
+    margin-block-end: 0px;
+    margin-block-start: 0px;
+}
+
+.wargear-item {
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.wargear-item > input {
+    background: transparent;
+    border: none;
+    font-style: italic;
+    text-align: left;
+    width: 100%;
+}
+
+.remove-wargear-btn {
+    position: absolute;
+    right: -20px;
+    top: 0px;
+}
+/****************************/
+
+.abilities {
+
+}
+/******* sub-sections *******/
+.abilities-content {
+
+}
+
+.abilities-label:after {
+    content: 'Abilities';
+}
+
+.abilities-list {
+    list-style-type: none;
+    margin-block-end: 0px;
+    margin-block-start: 0px;
+}
+
+.ability-item {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    position: relative;
+}
+
+.ability-name {
+    font-weight: 700;
+    margin-right: 10px;
+}
+
+.ability-name:after {
+    content: ':';
+}
+
+.remove-ability-btn {
+    position: absolute;
+    right: -20px;
+    top: 0px;
+}
+/****************************/
+
+.faction-keywords {
+
+}
+/******* sub-sections *******/
+.faction-keywords-label:after {
+    content: 'Faction Keywords';
+}
+/****************************/
+
+.keywords {
+
+}
+/******* sub-sections *******/
+.keywords-label:after {
+    content: 'Keywords';
+}
+/****************************/
+
+/************************************************/
