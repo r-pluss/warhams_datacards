@@ -179,6 +179,16 @@ function changeBattlefieldRole(ev){
     }
 }
 
+function dynamicallySizeTextarea(textarea){
+    textarea.addEventListener(
+        'input',
+        function(ev){
+            this.style.height = 'auto';
+            this.style.height = `${this.scrollHeight}px`;
+        }
+    );
+}
+
 function makeDataGridCell(fld){
     let cell = document.createElement('div');
     cell.classList.add(...fld.fieldClasses);
@@ -273,6 +283,11 @@ function setupInitialEventListeners(){
     let addWargearBtns = document.getElementsByClassName('add-wargear-btn');
     for(let btn of addWargearBtns){
         btn.addEventListener('click', appendWargearItem, {passive: true});
+    }
+    for(let sht of document.getElementsByClassName('datasheet')){
+        for(let textarea of sht.querySelector('textarea')){
+            dynamicallySizeTextarea(textarea);
+        }
     }
     let snapshotBtns = document.getElementsByClassName('snapshot-btn');
     for(let btn of snapshotBtns){
