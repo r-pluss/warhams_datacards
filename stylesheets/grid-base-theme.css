@@ -210,8 +210,10 @@
 }
 
 .unit-composition-textarea {
+    box-sizing: padding-box;
+    font-style: italic;
+    overflow: hidden;
     resize: none;
-    /*refer to https://codepen.io/vsync/pen/frudD for sizing solution inspiration*/
 }
 /****************************/
 
