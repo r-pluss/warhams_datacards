@@ -132,7 +132,7 @@ function appendDataGridRow(ev){
 }
 
 function appendWargearItem(ev){
-    let ul = ev.target.parentNode.nextSibling.children[1];
+    let ul = ev.target.parentNode.nextElementSibling.children[1];
     let li = document.createElement('li');
     li.classList.add('wargear-item');
     let input = document.createElement('input');
