@@ -150,6 +150,7 @@ function appendWargearItem(ev){
     let li = document.createElement('li');
     li.classList.add('wargear-item');
     let input = document.createElement('input');
+    input.setAttribute('placeholder', 'Describe equipment');
     let removeBtn = document.createElement('div');
     removeBtn.classList.add(...['remove-btn', 'remove-wargear-btn']);
     removeBtn.setAttribute('data-html2canvas-ignore', '');
