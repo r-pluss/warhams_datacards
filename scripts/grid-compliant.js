@@ -172,7 +172,7 @@ function makeDataGridCell(fld){
         fld.hasOwnProperty('input') ? fld.input : 'input'
     );
     if(fld.hasOwnProperty('placeholder') && fld.placeholder !== ''){
-        input.setAttribute('placeholder', placeholder);
+        input.setAttribute('placeholder', fld.placeholder);
     }
     if(fld.hasOwnProperty('inputEvents')){
         for(let ev of fld.inputEvents){
