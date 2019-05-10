@@ -220,7 +220,7 @@ function makeNewAbility(ev){
 
 function makeNewDataGridRow(config){
     let row = document.createElement('div');
-    row.classList.append(...config.itemClasses);
+    row.classList.add(...config.itemClasses);
     for(let fld of config.fieldList){
         row.appendChild(makeDataGridCell(fld));
     }
