@@ -121,7 +121,7 @@ function appendAbility(list, config){
 }
 
 function appendDataGridRow(ev){
-    let contentBody = ev.target.parentNode.nextSibling;
+    let contentBody = ev.target.parentNode.nextElementSibling;
     if(contentBody.classList.contains('profiles-content')){
         contentBody.appendChild(makeNewDataGridRow(dataGrids.profile));
     }else if(contentBody.classList.contains('weapons-content')){
