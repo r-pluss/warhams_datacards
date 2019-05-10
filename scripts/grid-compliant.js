@@ -19,39 +19,48 @@ const dataGrids = {
             },
             {
                 fieldName: 'M',
-                fieldClasses: ['profile-field']
+                fieldClasses: ['profile-field'],
+                placeholder: '-'
             },
             {
                 fieldName: 'WS',
-                fieldClasses: ['profile-field']
+                fieldClasses: ['profile-field'],
+                placeholder: '-'
             },
             {
                 fieldName: 'BS',
-                fieldClasses: ['profile-field']
+                fieldClasses: ['profile-field'],
+                placeholder: '-'
             },
             {
                 fieldName: 'S',
-                fieldClasses: ['profile-field']
+                fieldClasses: ['profile-field'],
+                placeholder: '-'
             },
             {
                 fieldName: 'T',
-                fieldClasses: ['profile-field']
+                fieldClasses: ['profile-field'],
+                placeholder: '-'
             },
             {
                 fieldName: 'W',
-                fieldClasses: ['profile-field']
+                fieldClasses: ['profile-field'],
+                placeholder: '-'
             },
             {
                 fieldName: 'A',
-                fieldClasses: ['profile-field']
+                fieldClasses: ['profile-field'],
+                placeholder: '-'
             },
             {
                 fieldName: 'Ld',
-                fieldClasses: ['profile-field']
+                fieldClasses: ['profile-field'],
+                placeholder: '-'
             },
             {
                 fieldName: 'Sv',
-                fieldClasses: ['profile-field']
+                fieldClasses: ['profile-field'],
+                placeholder: '-'
             }
         ],
         itemClasses: ['profile-item'],
@@ -69,23 +78,28 @@ const dataGrids = {
             },
             {
                 fieldName: 'Range',
-                fieldClasses: ['weapon-field']
+                fieldClasses: ['weapon-field'],
+                placeholder: '-'
             },
             {
                 fieldName: 'Type',
-                fieldClasses: ['weapon-field']
+                fieldClasses: ['weapon-field'],
+                placeholder: '-'
             },
             {
                 fieldName: 'S',
-                fieldClasses: ['weapon-field']
+                fieldClasses: ['weapon-field'],
+                placeholder: '-'
             },
             {
                 fieldName: 'AP',
-                fieldClasses: ['weapon-field']
+                fieldClasses: ['weapon-field'],
+                placeholder: '-'
             },
             {
                 fieldName: 'D',
-                fieldClasses: ['weapon-field']
+                fieldClasses: ['weapon-field'],
+                placeholder: '-'
             },
             {
                 fieldName: 'Abilities',
