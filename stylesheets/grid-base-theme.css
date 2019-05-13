@@ -292,14 +292,11 @@
 .weapon-field > textarea {
     background: transparent;
     resize: none;
+    text-align: left;
     width: 100%;
 }
 
 .weapon-field:first-child > input {
-    text-align: left;
-}
-
-.weapon-field:last-child > textarea {
     text-align: left;
 }
 
