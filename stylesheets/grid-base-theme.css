@@ -85,6 +85,12 @@
     width: 20px;
 }
 
+.grid-cell {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+}
+
 .remove-btn {
     background: url('../assets/icons/remove_btn_icon.png') center no-repeat;
     cursor: pointer;
@@ -208,15 +214,15 @@
     margin-left: 2rem;
 }
 
-.profile-field > input {
+.profile-field > * {
     background: transparent;
     font-family: inherit;
     text-align: center;
     width: 100%;
 }
 
-.profile-field:first-child > input {
-    text-align: left;
+.profile-field:first-child > * {
+    justify-content: left;
 }
 
 .profile-item {
@@ -283,7 +289,7 @@
     justify-content: left;
 }
 
-.weapon-field > input {
+.weapon-field > * {
     background: transparent;
     text-align: center;
     width: 100%;
@@ -296,8 +302,8 @@
     width: 100%;
 }
 
-.weapon-field:first-child > input {
-    text-align: left;
+.weapon-field:first-child > * {
+    justify-content: left;
 }
 
 .weapon-item {

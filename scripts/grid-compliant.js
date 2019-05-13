@@ -184,7 +184,6 @@ function changeBattlefieldRole(ev){
     }
 }
 
-
 function dynamicallySizeTextarea(ev){
     this.style.height = 'auto';
     this.style.height = `${this.scrollHeight}px`;
@@ -195,8 +194,15 @@ function makeDataGridCell(fld){
     cell.classList.add(...fld.fieldClasses);
     cell.dataset.fieldName = fld.fldName;
     let input = document.createElement(
-        fld.hasOwnProperty('input') ? fld.input : 'input'
+        fld.hasOwnProperty('input') ? fld.input : 'div'
     );
+    if(!fld.hasOwnProperty('input')||fld.input === 'input'){
+        input.setAttribute('contenteditable', '');
+        input.classList.add('grid-cell');
+    }
+    if(fld.hasOwnProperty('input')&&fld.input === 'textarea'){
+        input.setAttribute('rows', '1');
+    }
     if(fld.hasOwnProperty('placeholder') && fld.placeholder !== ''){
         input.setAttribute('placeholder', fld.placeholder);
     }
