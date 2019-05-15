@@ -223,6 +223,7 @@
 
 .profile-field:first-child > * {
     justify-content: left;
+    text-align: left;
 }
 
 .profile-item {
@@ -304,6 +305,7 @@
 
 .weapon-field:first-child > * {
     justify-content: left;
+    text-align: left;
 }
 
 .weapon-item {
