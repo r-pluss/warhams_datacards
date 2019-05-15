@@ -10,11 +10,11 @@ editable, printable data cards for Warhammer models
 * ~~wargear entry~~
 * ~~weapon table~~
 * consider adding markup support for certain fields
-* significantly improve visual appearance
+* ~~significantly improve visual appearance~~ (it's more modular now?)
 * ~~remove ui dev borders~~
 * ~~hide append/remove buttons from saved image~~
 * ~~alternating row colors for tables~~
-* passable typography
+* ~~passable typography~~ (could still be better)
 * support for models that characteristics that change with wound levels
 * support for units that have keywords that apply to separate models within the unit
-* change weapon ability field from input to textarea to allow wrapping
+* ~~change weapon ability field from input to textarea to allow wrapping~~
