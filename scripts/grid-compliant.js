@@ -224,10 +224,9 @@ function extractDataFields(item){
     let values = [];
     for(let el of item.children){
         if(!el.classList.contains('remove-btn')){
-            console.log(el.firstElementChild);
             values.push(
-                el.firstElementChild.value.length > 0 ?
-                    el.firstElementChild.value : undefined
+                el.firstElementChild.textContent.length > 0 ?
+                    el.firstElementChild.textContent : undefined
             );
         }
     }
@@ -244,8 +243,8 @@ function extractDataFromSection(section, data){
 }
 
 function extractFactionKeywords(sectionContent, data){
-    if(sectionContent.children[1].value.length > 0){
-        data.factionKeywords = sectionContent.children[1].value;
+    if(sectionContent.children[1].textContent.length > 0){
+        data.factionKeywords = sectionContent.children[1].textContent;
     }
 }
 
@@ -259,13 +258,15 @@ function extractHeaderData(sectionContent, data){
             break;
         }
     }
-    pwrRating = pwrRating.value.length > 0 ? pwrRating.value : undefined;
-    unitName = unitName.value.length > 0 ? unitName.value : undefined;
+    pwrRating = pwrRating.textContent.length > 0 ?
+        pwrRating.textContent : undefined;
+    unitName = unitName.textContent.length > 0 ?
+        unitName.textContent : undefined;
 }
 
 function extractKeywords(sectionContent, data){
-    if(sectionContent.children[1].value.length > 0){
-        data.keywords = sectionContent.children[1].value;
+    if(sectionContent.children[1].textContent.length > 0){
+        data.keywords = sectionContent.children[1].textContent;
     }
 }
 
@@ -283,8 +284,8 @@ function extractWargearData(sectionContent, data){
     let wargearList = sectionContent.querySelector('ul');
     for(let li of wargearList.querySelectorAll('wargear-item')){
         data.wargear.push(
-            li.firstElementChild.value.length > 0 ?
-                li.firstElementChild.value : undefined
+            li.firstElementChild.textContent.length > 0 ?
+                li.firstElementChild.textContent : undefined
         );
     }
 }
