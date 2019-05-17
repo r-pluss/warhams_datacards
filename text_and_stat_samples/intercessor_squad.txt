@@ -1,0 +1,101 @@
+HEADER
+Troop
+5
+Intercessor Squad
+
+PROFILES
+Intercessor
+6"
+3+
+3+
+4
+4
+2
+2
+7
+3+
+
+Intercessor Sergeant
+6"
+3+
+3+
+4
+4
+2
+3
+8
+3+
+
+UNIT COMPOSITION
+This unit contains 1 Intercessor Sergeant and 4 Intercessors. It can include up to 5 additional Intercessors (Power Rating +5). Each model is armed with a bolt rifle, bolt pistol, frag grenades, and krak grenades.
+
+WEAPONS
+Auto Bolt Rifle
+24"
+Assault 2
+4
+0
+1
+
+Bolt Pistol
+12"
+Pistol 1
+4
+0
+1
+
+Bolt Rifle
+30"
+Rapid Fire 1
+4
+-1
+1
+
+Stalker Bolt Rifle
+36"
+Heavy 1
+4
+-2
+1
+
+Frag Grenade
+6"
+Grenade D6
+3
+0
+1
+
+Krak Grenade
+6"
+Grenade 1
+6
+-1
+D3
+
+Power Sword
+Melee
+Melee
+User
+-3
+1
+
+WARGEAR OPTIONS
+All models in the unit may replace their bolt rifle with an auto bolt rifle or stalker bolt rifle.
+For every five models in the unit, one may take an auxiliary grenade launcher.
+The Intercessor Sergeant may take a power sword
+
+ABILITIES
+And They Shall Know No Fear
+(pg 131)
+
+Auxiliary Grenade Launcher
+If a model is armed with an auxiliary grenade launcher, increase the range of any grenade weapon they have to 30".
+
+Combat Squads
+Before any models are deployed at the start of the game, an Intercessor Squad containing 10 models may be split into two units, each containing 5 models.
+
+FACTION KEYWORDS
+Imperium, Adeptus Astartes, Ultramarines
+
+KEYWORDS
+Infantry, Primaris, Intercessor Squad
