@@ -263,9 +263,9 @@ function extractHeaderData(sectionContent, data){
             break;
         }
     }
-    pwrRating = pwrRating.value.length > 0 ?
+    data.powerRating = pwrRating.value.length > 0 ?
         pwrRating.value : undefined;
-    unitName = unitName.value.length > 0 ?
+    data.unitName = unitName.value.length > 0 ?
         unitName.value : undefined;
 }
 
