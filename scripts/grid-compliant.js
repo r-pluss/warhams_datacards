@@ -245,8 +245,8 @@ function extractHeaderData(sectionContent, data){
             break;
         }
     }
-    let pwrRating = pwrRating.value.length > 0 ? pwrRating.value : undefined;
-    let unitName = unitName.value.length > 0 ? unitName.value : undefined;
+    pwrRating = pwrRating.value.length > 0 ? pwrRating.value : undefined;
+    unitName = unitName.value.length > 0 ? unitName.value : undefined;
 }
 
 function extractKeywords(sectionContent, data){
