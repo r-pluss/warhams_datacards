@@ -263,10 +263,10 @@ function extractHeaderData(sectionContent, data){
             break;
         }
     }
-    pwrRating = pwrRating.textContent.length > 0 ?
-        pwrRating.textContent : undefined;
-    unitName = unitName.textContent.length > 0 ?
-        unitName.textContent : undefined;
+    pwrRating = pwrRating.value.length > 0 ?
+        pwrRating.value : undefined;
+    unitName = unitName.value.length > 0 ?
+        unitName.value : undefined;
 }
 
 function extractKeywords(sectionContent, data){
