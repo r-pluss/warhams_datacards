@@ -437,7 +437,9 @@ function requestDatasheetId(unitName){
                 i++;
             }
         }
-        autoName = `${autoName}_${'0'.repeat(max(3 - i.toString().length, 0)}${i.toString()}`;
+        autoName = `${autoName}_${'0'.repeat(
+            max(3 - i.toString().length, 0)
+        )}${i.toString()}`;
     }
     vex.dialog.prompt({
         message: 'Please give this datasheet a unique name.',
