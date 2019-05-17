@@ -220,6 +220,20 @@ function extractAbilities(sectionContent, data){
     }
 }
 
+function extractDataFields(item){
+    let values = [];
+    for(let el of item.children){
+        if(!el.classList.contains('remove-btn')){
+            console.log(el.firstElementChild);
+            values.push(
+                el.firstElementChild.value.length > 0 ?
+                    el.firstElementChild.value : undefined
+            );
+        }
+    }
+    return values;
+}
+
 function extractDataFromSection(section, data){
     for(let sect of datasheetSections){
         if(section.classList.contains(sect.class)){
@@ -283,19 +297,6 @@ function extractWeaponData(sectionContent, data){
             }
         }
     }
-}
-
-function extractDataFields(item){
-    let values = [];
-    for(let el of item.children){
-        if(!el.classList.contains('remove-btn')){
-            values.push(
-                el.firstElementChild.value.length > 0 ?
-                    el.firstElementChild.value : undefined
-            );
-        }
-    }
-    return values;
 }
 
 function extractUnitCompData(sectionContent, data){
