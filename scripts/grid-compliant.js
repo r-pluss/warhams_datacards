@@ -284,8 +284,8 @@ function extractWargearData(sectionContent, data){
     let wargearList = sectionContent.querySelector('ul');
     for(let li of wargearList.querySelectorAll('.wargear-item')){
         data.wargear.push(
-            li.firstElementChild.textContent.length > 0 ?
-                li.firstElementChild.textContent : undefined
+            li.firstElementChild.value.length > 0 ?
+                li.firstElementChild.value : undefined
         );
     }
 }
