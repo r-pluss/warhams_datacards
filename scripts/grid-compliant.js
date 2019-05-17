@@ -352,8 +352,9 @@ function makeNewAbility(ev){
                             userInput.text = val;
                             console.log(`Ability text: ${userInput.text}`);
                             console.log(ev.target);
+                            let cntnt = ev.target.parentNode.nextElementSibling;
                             appendAbility(
-                                ev.target.parentNode.nextElementSibling,
+                                cntnt.querySelector('.abilities-list'),
                                 userInput
                             );
                         }
