@@ -311,6 +311,7 @@
 .weapon-item {
     display: grid;
     grid-template-columns: 2.5fr 1fr 1fr 1fr 1fr 1fr 3fr;
+    margin-top: 10px;
     position: relative;
 }
 
