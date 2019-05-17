@@ -121,8 +121,33 @@ const dataGrids = {
         }
     }
 };
+const datasheetSections = [
+    {class: 'header', extractor: extractHeaderData},
+    {class: 'profiles', extractor: extractProfileData},
+    {class: 'unit-composition', extractor: extractUnitCompData},
+    {class: 'weapons', extractor: extractWeaponData},
+    {class: 'wargear', extractor: extractWargearData},
+    {class: 'abilities', extractor: extractAbilities},
+    {class: 'faction-keywords', extractor: extractFactionKeywords},
+    {class: 'keywords', extractor: extractKeywords}
+];
+const savedSheets = [];
+const unitTemplate = {
+    abilities: [],
+    battlefieldRole: 'troop',
+    id: undefined,
+    factionKeywords: undefined,
+    keywords: undefined,
+    powerRating: undefined,
+    profiles: [],
+    unitComposition: undefined,
+    unitName: undefined,
+    wargear: [],
+    weapons: []
+};
 
 function appendAbility(list, config){
+    console.log(list);
     let li = document.createElement('li');
     li.classList.add('ability-item');
     let abName = document.createElement('div');
@@ -189,6 +214,95 @@ function dynamicallySizeTextarea(ev){
     this.style.height = `${this.scrollHeight}px`;
 }
 
+function extractAbilities(sectionContent, data){
+    for(let item of sectionContent.querySelectorAll('ability-item')){
+
+    }
+}
+
+function extractDataFromSection(section, data){
+    for(let sect of datasheetSections){
+        if(section.classList.contains(sect.class)){
+            sect.extractor(section.children[1], data);
+            break;
+        }
+    }
+}
+
+function extractFactionKeywords(sectionContent, data){
+    if(sectionContent.children[1].value.length > 0){
+        data.factionKeywords = sectionContent.children[1].value;
+    }
+}
+
+function extractHeaderData(sectionContent, data){
+    let battleRole = sectionContent.children[0];
+    let pwrRating = sectionContent.children[1].children[0];
+    let unitName = sectionContent.children[2];
+    for(let role of battlefieldRoles){
+        if(battleRole.classList.contains(role)){
+            data.battlefieldRole = role;
+            break;
+        }
+    }
+    let pwrRating = pwrRating.value.length > 0 ? pwrRating.value : undefined;
+    let unitName = unitName.value.length > 0 ? unitName.value : undefined;
+}
+
+function extractKeywords(sectionContent, data){
+    if(sectionContent.children[1].value.length > 0){
+        data.keywords = sectionContent.children[1].value;
+    }
+}
+
+function extractProfileData(sectionContent, data){
+    if(sectionContent.childElementCount > 1){
+        for(let child of sectionContent.children){
+            if(child.classList.contains('profile-item')){
+                data.profiles.push(extractDataFields(child));
+            }
+        }
+    }
+}
+
+function extractWargearData(sectionContent, data){
+    let wargearList = sectionContent.querySelector('ul');
+    for(let li of wargearList.querySelectorAll('wargear-item')){
+        data.wargear.push(
+            li.firstElementChild.value.length > 0 ?
+                li.firstElementChild.value : undefined
+        );
+    }
+}
+
+function extractWeaponData(sectionContent, data){
+    if(sectionContent.childElementCount > 1){
+        for(let child of sectionContent.children){
+            if(child.classList.contains('weapon-item')){
+                data.weapons.push(extractDataFields(child));
+            }
+        }
+    }
+}
+
+function extractDataFields(item){
+    let values = [];
+    for(let el of item.children){
+        if(!el.classList.contains('remove-btn')){
+            values.push(
+                el.firstElementChild.value.length > 0 ?
+                    el.firstElementChild.value : undefined
+            );
+        }
+    }
+    return values;
+}
+
+function extractUnitCompData(sectionContent, data){
+    let descript = sectionContent.children[1].value;
+    data.unitComposition = descript.length > 0 ? descript : undefined;
+}
+
 function makeDataGridCell(fld){
     let cell = document.createElement('div');
     cell.classList.add(...fld.fieldClasses);
@@ -239,7 +353,7 @@ function makeNewAbility(ev){
                             console.log(`Ability text: ${userInput.text}`);
                             console.log(ev.target);
                             appendAbility(
-                                ev.target.parentNode.nextSibling.children[1],
+                                ev.target.parentNode.nextElementSibling,
                                 userInput
                             );
                         }
@@ -271,6 +385,14 @@ function makeNewDataGridRow(config){
 function removeThisChild(ev){
     let child = ev.target.parentNode;
     child.parentNode.removeChild(child);
+}
+
+function saveDatasheet(datasheet){
+    let data = Object.assign({}, unitTemplate);
+    for(let section of datasheet.querySelectorAll('section')){
+        extractDataFromSection(section, data);
+    }
+    return data;
 }
 
 function setupInitialEventListeners(){
