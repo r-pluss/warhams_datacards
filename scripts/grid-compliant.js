@@ -215,7 +215,7 @@ function dynamicallySizeTextarea(ev){
 }
 
 function extractAbilities(sectionContent, data){
-    for(let item of sectionContent.querySelectorAll('ability-item')){
+    for(let item of sectionContent.querySelectorAll('.ability-item')){
         data.abilities.push(
             [
                 item.querySelector('.ability-name').textContent,
