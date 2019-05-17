@@ -209,6 +209,13 @@ function changeBattlefieldRole(ev){
     }
 }
 
+function clearNode(node){
+    while(node.firstChild){
+        node.removeChild(node.firstChild);
+    }
+    return node;
+}
+
 function dynamicallySizeTextarea(ev){
     this.style.height = 'auto';
     this.style.height = `${this.scrollHeight}px`;
@@ -517,6 +524,18 @@ function snapshot(){
                 a.click();
             }
         );
+    }
+}
+
+function syncSavedSheetsMenu(){
+    let menu = clearNode(document.querySelector('#app-controls'));
+    let opt;
+    let txt;
+    for(let sht of savedSheets){
+        opt =  document.createElement('option');
+        opt.setAttribute('value', sht.id)
+        opt.appendChild(document.createTextNode(sht.id));
+        menu.appendChild(opt);
     }
 }
 
