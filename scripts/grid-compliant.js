@@ -528,7 +528,7 @@ function snapshot(){
 }
 
 function syncSavedSheetsMenu(){
-    let menu = clearNode(document.querySelector('#app-controls'));
+    let menu = clearNode(document.querySelector('#saved-sheets-menu'));
     let opt;
     let txt;
     for(let sht of savedSheets){
