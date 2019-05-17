@@ -390,9 +390,72 @@ function makeNewDataGridRow(config){
     return row;
 }
 
+function persistDataLocally(){
+    try{
+        window.localStorage.setItem(
+            'savedSheets',
+            JSON.stringify({savedSheets: savedSheets})
+        );
+    }catch(e){
+        throw new Error('Local storage is not supported!');
+    }
+}
+
 function removeThisChild(ev){
     let child = ev.target.parentNode;
     child.parentNode.removeChild(child);
+}
+
+function retrieveLocallyPersistedData(){
+    let strSavedSheets;
+    try{
+        strSavedSheets = window.localStorage.getItem('savedSheets');
+        if(strSavedSheets !== null){
+            try{
+                for(let sht of JSON.parse(strSavedSheets).savedSheets){
+                    savedSheets.push(sht);
+                }
+            }catch(e){
+                console.log(e);
+                throw new Error('Unable to correctly parse.');
+            }
+
+        }
+    }catch(e){
+        console.log(e);
+        throw new Error('Local storage is not supported!');
+    }
+}
+
+function requestDatasheetId(unitName){
+    let sheetID;
+    let autoName = 'new_datasheet'
+    if(unitName === undefined){
+        let i = 1;
+        for(let sht of savedSheets){
+            if(sht.id.toLowerCase.slice(0, 13) === autoName){
+                i++;
+            }
+        }
+        autoName = `${autoName}_${'0'.repeat(max(
+                3 - i.toString().length, 0
+            )}${i.toString()}`;
+    }
+    vex.dialog.prompt({
+        message: 'Please give this datasheet a unique name.',
+        placeholder: unitName || autoName,
+        callback: function(val){
+            val = val.trim();
+            for(let sht of savedSheets){
+                if(sht.id === val){
+                    //throw an error or something
+                    console.log('ERROR ID ALREADY EXISTS');
+                }
+            }
+            sheetID = val;
+        }
+    });
+    return sheetID;
 }
 
 function saveDatasheet(datasheet){
@@ -400,7 +463,17 @@ function saveDatasheet(datasheet){
     for(let section of datasheet.querySelectorAll('section')){
         extractDataFromSection(section, data);
     }
-    return data;
+    if(data.id === undefined){
+        data.id = requestDatasheetId(data.unitName);
+    }
+    for(let sht of savedSheets){
+        if(sht.id === data.id){
+            throw new Error(`datasheet with id [${sht.id}] already exists.`);
+        }
+    }
+    savedSheets.push(data);
+    console.log(data);
+    //persistDataLocally();
 }
 
 function setupInitialEventListeners(){
