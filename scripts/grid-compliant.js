@@ -243,8 +243,8 @@ function extractDataFromSection(section, data){
 }
 
 function extractFactionKeywords(sectionContent, data){
-    if(sectionContent.children[1].textContent.length > 0){
-        data.factionKeywords = sectionContent.children[1].textContent;
+    if(sectionContent.children[1].value.length > 0){
+        data.factionKeywords = sectionContent.children[1].value;
     }
 }
 
@@ -265,8 +265,8 @@ function extractHeaderData(sectionContent, data){
 }
 
 function extractKeywords(sectionContent, data){
-    if(sectionContent.children[1].textContent.length > 0){
-        data.keywords = sectionContent.children[1].textContent;
+    if(sectionContent.children[1].value.length > 0){
+        data.keywords = sectionContent.children[1].value;
     }
 }
 
