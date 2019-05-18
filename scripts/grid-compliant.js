@@ -209,6 +209,33 @@ function changeBattlefieldRole(ev){
     }
 }
 
+function clearDataSheet(sheet){
+    sheet.querySelector('.unit-name').value = '';
+    sheet.querySelector('.power-rating').querySelector('input').value = '';
+    let bfRole = sheet.querySelector('.battlefield-role');
+    bfRole.classList.remove(...battlefieldRoles);
+    bfRole.classList.add('troop');
+    let profiles = sheet.querySelector('.profiles-content');
+    for(let item of profiles.querySelectorAll('.profile-item')){
+        profiles.removeChild(item);
+    }
+    sheet.querySelector('.unit-composition-textarea').value = '';
+    let weapons = sheet.querySelector('.weapons-content');
+    for(let item of profiles.querySelectorAll('.weapon-item')){
+        weapons.removeChild(item);
+    }
+    let wargear = sheet.querySelector('.wargear-list');
+    for(let item of profiles.querySelectorAll('.wargear-item')){
+        wargear.removeChild(item);
+    }
+    let abilities = sheet.querySelector('.abilities-list');
+    for(let item of profiles.querySelectorAll('.ability-item')){
+        abilities.removeChild(item);
+    }
+    sheet.querySelector('.faction-keywords').value = '';
+    sheet.querySelector('.keywords').value = '';
+}
+
 function clearNode(node){
     while(node.firstChild){
         node.removeChild(node.firstChild);
