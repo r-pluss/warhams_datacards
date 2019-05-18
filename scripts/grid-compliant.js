@@ -578,18 +578,20 @@ function requestDatasheetId(data){
         message: 'Please give this datasheet a unique name.',
         value: data.unitName || autoName,
         callback: function(val){
-            let needIdConfirm = false;
-            val = val.trim();
-            for(let sht of savedSheets){
-                if(sht.id === val){
-                    needIdConfirm = true;
-                    resolveSheetIdCollision(this);
-                    //throw new Error(`ID [${val}] ALREADY EXISTS`);
+            if(val){
+                let needIdConfirm = false;
+                val = val.trim();
+                for(let sht of savedSheets){
+                    if(sht.id === val){
+                        needIdConfirm = true;
+                        resolveSheetIdCollision(this);
+                        //throw new Error(`ID [${val}] ALREADY EXISTS`);
+                    }
                 }
-            }
-            if(!needIdConfirm){
-                this.id = val;
-                savedSheets.push(this);
+                if(!needIdConfirm){
+                    this.id = val;
+                    savedSheets.push(this);
+                }
             }
         }.bind(data)
     });
