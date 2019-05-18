@@ -503,6 +503,7 @@ function makeNewWargearItem(text){
     removeBtn.setAttribute('data-html2canvas-ignore', '');
     removeBtn.addEventListener('click', removeThisChild, {passive: true});
     li.append(...[input, removeBtn]);
+    return li
 }
 
 function persistDataLocally(){
