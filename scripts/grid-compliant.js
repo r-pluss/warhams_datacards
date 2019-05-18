@@ -555,7 +555,7 @@ function requestDatasheetId(data){
     }
     vex.dialog.prompt({
         message: 'Please give this datasheet a unique name.',
-        placeholder: data.unitName || autoName,
+        value: data.unitName || autoName,
         callback: function(val){
             console.log(val);
             val = val.trim();
