@@ -23,10 +23,15 @@ main {
                 0 1px 5px  0 rgba(0, 0, 0, 0.24);
     display: flex;
     flex-direction: column;
+    font-family: 'Comfortaa';
     justify-content: space-evenly;
     padding-bottom: 10px;
     padding-top: 10px;
     width: 66%;
+}
+
+#app-controls > * {
+    font-family: inherit;
 }
 
 #app-controls > *:not(:last-child) {
