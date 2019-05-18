@@ -550,7 +550,7 @@ function requestDatasheetId(data){
             }
         }
         autoName = `${autoName}_${'0'.repeat(
-            max(3 - i.toString().length, 0)
+            Math.max(3 - i.toString().length, 0)
         )}${i.toString()}`;
     }
     vex.dialog.prompt({
