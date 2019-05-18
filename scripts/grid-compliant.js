@@ -539,10 +539,10 @@ function retrieveLocallyPersistedData(){
     }
 }
 
-function requestDatasheetId(unitName){
+function requestDatasheetId(data){
     let sheetID;
     let autoName = 'new_datasheet'
-    if(unitName === undefined){
+    if(data.unitName === undefined){
         let i = 1;
         for(let sht of savedSheets){
             if(sht.id.toLowerCase.slice(0, 13) === autoName){
@@ -561,13 +561,12 @@ function requestDatasheetId(unitName){
             for(let sht of savedSheets){
                 if(sht.id === val){
                     //throw an error or something
-                    console.log('ERROR ID ALREADY EXISTS');
+                    throw new Error(`ID [${val}] ALREADY EXISTS`);
                 }
             }
-            sheetID = val;
-        }
+            this.id = val;
+        }.bind(data)
     });
-    return sheetID;
 }
 
 function saveDatasheet(datasheet){
@@ -577,15 +576,18 @@ function saveDatasheet(datasheet){
     }
     if(data.id === undefined){
         data.id = requestDatasheetId(data.unitName);
-    }
-    for(let sht of savedSheets){
-        if(sht.id === data.id){
-            throw new Error(`datasheet with id [${sht.id}] already exists.`);
+    }else{
+        for(let sht of savedSheets){
+            if(sht.id === data.id){
+                throw new Error(
+                    `datasheet with id [${sht.id}] already exists.`
+                );
+            }
         }
+        savedSheets.push(data);
+        //persistDataLocally();
     }
-    savedSheets.push(data);
     console.log(data);
-    //persistDataLocally();
 }
 
 function setupInitialEventListeners(){
