@@ -518,6 +518,24 @@ function removeThisChild(ev){
     child.parentNode.removeChild(child);
 }
 
+function resolveSheetIdCollision(data){
+    vex.dialog.confirm({
+        message: `There's already a sheet saved as ${data.id}. Overwrite it?`,
+        callback: function(val){
+            if(val){
+                let i = 0;
+                for(let sht of savedSheets){
+                    if(sht.id === this.id){
+                        savedSheets[i] = this;
+                        break;
+                    }
+                    i++;
+                }
+            }
+        }.bind(data);
+    });
+}
+
 function retrieveLocallyPersistedData(){
     let strSavedSheets;
     try{
@@ -557,17 +575,19 @@ function requestDatasheetId(data){
         message: 'Please give this datasheet a unique name.',
         value: data.unitName || autoName,
         callback: function(val){
-            console.log(val);
+            let needIdConfirm = false;
             val = val.trim();
-            console.log(val);
             for(let sht of savedSheets){
                 if(sht.id === val){
-                    //throw an error or something
-                    throw new Error(`ID [${val}] ALREADY EXISTS`);
+                    needIdConfirm = true;
+                    resolveSheetIdCollision(this);
+                    //throw new Error(`ID [${val}] ALREADY EXISTS`);
                 }
             }
-            this.id = val;
-            savedSheets.push(this);
+            if(!needIdConfirm){
+                this.id = val;
+                savedSheets.push(this);
+            }
         }.bind(data)
     });
 }
@@ -580,17 +600,21 @@ function saveDatasheet(datasheet){
     if(data.id === undefined){
         data.id = requestDatasheetId(data);
     }else{
+        let needIdConfirm = false;
         for(let sht of savedSheets){
             if(sht.id === data.id){
-                throw new Error(
+                /*throw new Error(
                     `datasheet with id [${sht.id}] already exists.`
-                );
+                );*/
+                needIdConfirm = true;
+                resolveSheetIdCollision(data);
             }
         }
-        savedSheets.push(data);
-        //persistDataLocally();
+        if(!needIdConfirm){
+            savedSheets.push(data);
+            //persistDataLocally();
+        }
     }
-    console.log(data);
 }
 
 function setupInitialEventListeners(){
@@ -638,11 +662,16 @@ function snapshot(){
 }
 
 function syncSavedSheetsMenu(){
-    let menu = clearNode(document.querySelector('#saved-sheets-menu'));
+    let menu = document.querySelector('#saved-sheets-menu');
+    for(let child of menu.querySelectorAll('option')){
+        if(child.value !== '__defaultValue'){
+            menu.removeChild(child);
+        }
+    }
     let opt;
     let txt;
     for(let sht of savedSheets){
-        opt =  document.createElement('option');
+        opt = document.createElement('option');
         opt.setAttribute('value', sht.id)
         opt.appendChild(document.createTextNode(sht.id));
         menu.appendChild(opt);
