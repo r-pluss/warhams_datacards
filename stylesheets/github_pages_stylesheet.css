@@ -24,6 +24,8 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+    padding-bottom: 10px;
+    padding-top: 10px;
     width: 66%;
 }
 
