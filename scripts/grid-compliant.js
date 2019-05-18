@@ -565,6 +565,7 @@ function requestDatasheetId(data){
                 }
             }
             this.id = val;
+            savedSheets.push(this);
         }.bind(data)
     });
 }
@@ -575,7 +576,7 @@ function saveDatasheet(datasheet){
         extractDataFromSection(section, data);
     }
     if(data.id === undefined){
-        data.id = requestDatasheetId(data.unitName);
+        data.id = requestDatasheetId(data);
     }else{
         for(let sht of savedSheets){
             if(sht.id === data.id){
