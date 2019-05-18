@@ -177,16 +177,82 @@ function appendDataGridRow(ev){
 
 function appendWargearItem(ev){
     let ul = ev.target.parentNode.nextElementSibling.children[1];
-    let li = document.createElement('li');
-    li.classList.add('wargear-item');
-    let input = document.createElement('input');
-    input.setAttribute('placeholder', 'Describe equipment');
-    let removeBtn = document.createElement('div');
-    removeBtn.classList.add(...['remove-btn', 'remove-wargear-btn']);
-    removeBtn.setAttribute('data-html2canvas-ignore', '');
-    removeBtn.addEventListener('click', removeThisChild, {passive: true});
-    li.append(...[input, removeBtn]);
-    ul.appendChild(li);
+    ul.appendChild(makeNewWargearItem());
+}
+
+function applyDataToSheet(data, sheet){
+    let entry;
+    let i;
+    if(data.unitName){
+        sheet.querySelector('.unit-name').value = data.unitName;
+    }
+    if(data.powerRating){
+        sheet.querySelector(
+            '.power-rating'
+        ).querySelector('input').value = data.powerRating;
+    }
+    if(data.battlefieldRole){
+        let bfRole = sheet.querySelector('.battlefield-role');
+        bfRole.classList.remove(...battlefieldRoles);
+        bfRole.classList.add(data.battlefieldRole);
+    }
+    if(data.profiles.length > 0){
+        let profiles = sheet.querySelector('.profiles-content');
+        for(let item of data.profiles){
+            i = 0;
+            entry = makeNewDataGridRow(dataGrids.profile);
+            for(let val of item){
+                if(val){
+                    entry.children[i].firstElementChild.tagName === 'DIV' ?
+                        entry.children[i].firstElementChild.textContent = val :
+                        entry.children[i].firstElementChild.value = val ;
+                }
+                i++;
+            }
+            profiles.appendChild(entry);
+        }
+    }
+    if(data.unitComposition){
+        sheet.querySelector(
+            '.unit-composition-textarea'
+        ).value = data.unitComposition;
+    }
+    if(data.weapons.length > 0){
+        let weapons = sheet.querySelector('.weapons-content');
+        for(let item of data.weapons){
+            i = 0;
+            entry = makeNewDataGridRow(dataGrids.weapon);
+            for(let val of item){
+                if(val){
+                    entry.children[i].firstElementChild.tagName === 'DIV' ?
+                        entry.children[i].firstElementChild.textContent = val :
+                        entry.children[i].firstElementChild.value = val ;
+                }
+                i++;
+            }
+            weapons.appendChild(entry);
+        }
+    }
+    if(data.wargear.length > 0){
+        let wargear = sheet.querySelector('.wargear-list');
+        for(let item of data.wargear){
+            wargear.appendChild(makeNewWargearItem(item))
+        }
+    }
+    if(data.abilities.length > 0){
+        let abilities = sheet.querySelector('.abilities-list');
+        for(let item of data.abilities){
+            appendAbility(abilities, {name: item[0], text: item[2]});
+        }
+    }
+    if(data.factionKeywords){
+        sheet.querySelector(
+            '.faction-keywords-input'
+        ).value = data.factionKeywords;
+    }
+    if(data.keywords){
+        sheet.querySelector('.keywords-input').value = data.keywords;
+    }
 }
 
 function changeBattlefieldRole(ev){
@@ -422,6 +488,21 @@ function makeNewDataGridRow(config){
     }
     row.appendChild(removeBtn);
     return row;
+}
+
+function makeNewWargearItem(text){
+    let li = document.createElement('li');
+    li.classList.add('wargear-item');
+    let input = document.createElement('input');
+    input.setAttribute('placeholder', 'Describe equipment');
+    if(text && text.length > 0){
+        input.value = text;
+    }
+    let removeBtn = document.createElement('div');
+    removeBtn.classList.add(...['remove-btn', 'remove-wargear-btn']);
+    removeBtn.setAttribute('data-html2canvas-ignore', '');
+    removeBtn.addEventListener('click', removeThisChild, {passive: true});
+    li.append(...[input, removeBtn]);
 }
 
 function persistDataLocally(){
