@@ -111,8 +111,11 @@
         </div>
     </main>
     <div id='app-controls'>
-        <button class='snapshot-btn'>Save as Image</button>
-        <select id='saved-sheets-menu'></select>
+        <button id='snapshot-btn'>Save as Image</button>
+        <button id='persist-data-btn'>Save to My Unit List</button>
+        <select id='saved-sheets-menu'>
+            <option value='__defaultValue'>-- Unit List --</option>
+        </select>
     </div>
     <script src= 'https://github.com/niklasvh/html2canvas/releases/download/v1.0.0-rc.1/html2canvas.min.js'></script>
     <script src= './scripts/vex.combined_4.1.0.min.js'></script>
