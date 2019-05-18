@@ -221,19 +221,19 @@ function clearDataSheet(sheet){
     }
     sheet.querySelector('.unit-composition-textarea').value = '';
     let weapons = sheet.querySelector('.weapons-content');
-    for(let item of profiles.querySelectorAll('.weapon-item')){
+    for(let item of weapons.querySelectorAll('.weapon-item')){
         weapons.removeChild(item);
     }
     let wargear = sheet.querySelector('.wargear-list');
-    for(let item of profiles.querySelectorAll('.wargear-item')){
+    for(let item of wargear.querySelectorAll('.wargear-item')){
         wargear.removeChild(item);
     }
     let abilities = sheet.querySelector('.abilities-list');
-    for(let item of profiles.querySelectorAll('.ability-item')){
+    for(let item of abilities.querySelectorAll('.ability-item')){
         abilities.removeChild(item);
     }
-    sheet.querySelector('.faction-keywords').value = '';
-    sheet.querySelector('.keywords').value = '';
+    sheet.querySelector('.faction-keywords-input').value = '';
+    sheet.querySelector('.keywords-input').value = '';
 }
 
 function clearNode(node){
