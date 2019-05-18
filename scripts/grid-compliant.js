@@ -557,7 +557,9 @@ function requestDatasheetId(data){
         message: 'Please give this datasheet a unique name.',
         placeholder: data.unitName || autoName,
         callback: function(val){
+            console.log(val);
             val = val.trim();
+            console.log(val);
             for(let sht of savedSheets){
                 if(sht.id === val){
                     //throw an error or something
