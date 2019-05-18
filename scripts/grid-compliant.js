@@ -182,6 +182,9 @@ function appendWargearItem(ev){
 function applyDataToSheet(data, sheet){
     let entry;
     let i;
+    if(data.id){
+        sheet.dataset.datasheetId = data.id;
+    }
     if(data.unitName){
         sheet.querySelector('.unit-name').value = data.unitName;
     }
