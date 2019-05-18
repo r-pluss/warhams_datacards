@@ -532,7 +532,7 @@ function resolveSheetIdCollision(data){
                     i++;
                 }
             }
-        }.bind(data);
+        }.bind(data)
     });
 }
 
