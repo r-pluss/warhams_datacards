@@ -41,7 +41,7 @@
     grid-template-columns: 1fr 8fr;
 }
 
-.datasheet-border-bottom{
+.datasheet-border-bottom {
     border-bottom-left-radius: 2px;
     border-bottom-right-radius: 2px;
     border-color: #525252;
@@ -50,14 +50,14 @@
     grid-area: bb;
 }
 
-.datasheet-border-left{
+.datasheet-border-left {
     border-color: #525252;
     border-style: solid;
     border-width: 0px 2px 0px 2px;
     grid-area: bl;
 }
 
-.datasheet-border-right{
+.datasheet-border-right {
     border-color: #525252;
     border-style: solid;
     border-width: 0px 2px 0px 2px;
