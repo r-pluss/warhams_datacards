@@ -29,6 +29,10 @@ main {
     width: 66%;
 }
 
+#app-controls > *:not(:last-child) {
+    margin-bottom: 10px;
+}
+
 #app-controls > button {
     width: 25%;
 }
