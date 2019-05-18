@@ -599,6 +599,10 @@ function requestDatasheetId(data){
 
 function saveDatasheet(datasheet){
     let data = Object.assign({}, unitTemplate);
+    let sheetID = datasheet.dataset.datasheetId;
+    if(sheetID && sheetID !== 'undefined'){
+        data.id = sheetID;
+    }
     for(let section of datasheet.querySelectorAll('section')){
         extractDataFromSection(section, data);
     }
