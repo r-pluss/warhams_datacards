@@ -147,7 +147,6 @@ const unitTemplate = {
 };
 
 function appendAbility(list, config){
-    console.log(list);
     let li = document.createElement('li');
     li.classList.add('ability-item');
     let abName = document.createElement('div');
@@ -451,14 +450,11 @@ function makeNewAbility(ev){
         callback: function(val){
             if(val !== undefined && val.length > 0){
                 userInput.name = val;
-                console.log(`Ability name: ${userInput.name}`);
                 vex.dialog.prompt({
                     message: 'Enter ability description',
                     callback: function(val){
                         if(val !== undefined && val.length > 0){
                             userInput.text = val;
-                            console.log(`Ability text: ${userInput.text}`);
-                            console.log(ev.target);
                             let cntnt = ev.target.parentNode.nextElementSibling;
                             appendAbility(
                                 cntnt.querySelector('.abilities-list'),
