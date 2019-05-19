@@ -623,6 +623,10 @@ function requestDatasheetId(data){
     });
 }
 
+function saveCurrentSheet(ev){
+    saveDatasheet(document.querySelector('.datasheet'));
+}
+
 function saveDatasheet(datasheet){
     let data = Object.assign({}, unitTemplate);
     let sheetID = datasheet.dataset.datasheetId;
@@ -675,10 +679,10 @@ function setupInitialEventListeners(){
             textarea.addEventListener('input', dynamicallySizeTextarea);
         }
     }
-    let snapshotBtns = document.getElementsByClassName('snapshot-btn');
-    for(let btn of snapshotBtns){
-        btn.addEventListener('click', snapshot, {passive: true})
-    }
+    let snapshotBtn = document.getElementById('snapshot-btn');
+    snapshotBtn.addEventListener('click', snapshot, {passive: true});
+    let saveBtn = document.getElementById('persist-data-btn');
+    saveBtn.addEventListener('click', saveCurrentSheet, {passive: true});
     let savedSheetMenu = document.getElementById('saved-sheets-menu');
     savedSheetMenu.addEventListener(
         'change', loadSavedSheet, {passive: false}
