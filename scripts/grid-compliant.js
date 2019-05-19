@@ -419,6 +419,25 @@ function extractUnitCompData(sectionContent, data){
     data.unitComposition = descript.length > 0 ? descript : undefined;
 }
 
+function loadSavedSheet(ev){
+    if(ev.target.value && ev.target.value !== '__defaultValue'){
+        let savedSheet;
+        let domSheet = document.querySelector('.datasheet');
+        for(let sht of savedSheets){
+            if(sht.id === ev.target.value){
+                savedSheet = sht;
+                break;
+            }
+        }
+        if(savedSheet){
+            clearDataSheet(domSheet);
+            applyDataToSheet(savedSheet, domSheet);
+        }else{
+            throw new Error(`No sheet with ID [${ev.target.value}] found.`);
+        }
+    }
+}
+
 function makeDataGridCell(fld){
     let cell = document.createElement('div');
     cell.classList.add(...fld.fieldClasses);
@@ -546,10 +565,6 @@ function resolveSheetIdCollision(data){
     });
 }
 
-function restoreSavedSheet(ev){
-    console.log(ev);
-}
-
 function retrieveLocallyPersistedData(){
     let strSavedSheets;
     try{
@@ -666,7 +681,7 @@ function setupInitialEventListeners(){
     }
     let savedSheetMenu = document.getElementById('saved-sheets-menu');
     savedSheetMenu.addEventListener(
-        'change', restoreSavedSheet, {passive: false}
+        'change', loadSavedSheet, {passive: false}
     );
 }
 
