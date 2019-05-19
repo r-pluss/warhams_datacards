@@ -621,7 +621,7 @@ function requestDatasheetId(data){
     if(data.unitName === undefined){
         let i = 1;
         for(let sht of savedSheets){
-            if(sht.id.toLowerCase.slice(0, 13) === autoName){
+            if(sht.id.toLowerCase().slice(0, 13) === autoName){
                 i++;
             }
         }
