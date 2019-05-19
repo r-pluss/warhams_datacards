@@ -566,6 +566,7 @@ function resolveSheetIdCollision(data){
     vex.dialog.confirm({
         message: `There's already a sheet saved as ${data.id}. Overwrite it?`,
         callback: function(val){
+            console.log(this);
             if(val){
                 let i = 0;
                 for(let sht of savedSheets){
@@ -645,14 +646,18 @@ function saveCurrentSheet(ev){
 }
 
 function saveDatasheet(datasheet){
+    console.log(datasheet);
     let data = Object.assign({}, unitTemplate);
+    console.log(data);
     let sheetID = datasheet.dataset.datasheetId;
     if(sheetID && sheetID !== 'undefined'){
         data.id = sheetID;
     }
+    console.log(sheetID);
     for(let section of datasheet.querySelectorAll('section')){
         extractDataFromSection(section, data);
     }
+    console.log(data);
     if(data.id === undefined){
         data.id = requestDatasheetId(data);
     }else{
