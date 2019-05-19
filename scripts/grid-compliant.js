@@ -277,6 +277,13 @@ function changeBattlefieldRole(ev){
     }
 }
 
+function checkAndRestoreSavedSheets(){
+    retrieveLocallyPersistedData();
+    if(savedSheets.length > 0){
+        syncSavedSheetsMenu();
+    }
+}
+
 function clearDataSheet(sheet){
     sheet.querySelector('.unit-name').value = '';
     sheet.querySelector('.power-rating').querySelector('input').value = '';
