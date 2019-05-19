@@ -12,6 +12,8 @@ main {
     align-items: center;
     display: flex;
     flex-direction: column;
+    padding-bottom: 10px;
+    padding-top: 10px;
     width: 100%;
 }
 
