@@ -242,7 +242,7 @@ function applyDataToSheet(data, sheet){
     if(data.abilities.length > 0){
         let abilities = sheet.querySelector('.abilities-list');
         for(let item of data.abilities){
-            appendAbility(abilities, {name: item[0], text: item[2]});
+            appendAbility(abilities, {name: item[0], text: item[1]});
         }
     }
     if(data.factionKeywords){
