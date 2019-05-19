@@ -546,6 +546,10 @@ function resolveSheetIdCollision(data){
     });
 }
 
+function restoreSavedSheet(ev){
+    console.log(ev);
+}
+
 function retrieveLocallyPersistedData(){
     let strSavedSheets;
     try{
@@ -660,6 +664,10 @@ function setupInitialEventListeners(){
     for(let btn of snapshotBtns){
         btn.addEventListener('click', snapshot, {passive: true})
     }
+    let savedSheetMenu = document.getElementById('saved-sheets-menu');
+    savedSheetMenu.addEventListener(
+        'change', restoreSavedSheet, {passive: false}
+    );
 }
 
 function snapshot(){
