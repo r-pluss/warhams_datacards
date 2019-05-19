@@ -1,0 +1,102 @@
+HEADER
+Elite
+5
+Reiver Squad
+
+PROFILES
+Reiver
+6"
+3+
+3+
+4
+4
+2
+2
+7
+3+
+
+Reiver Sergeant
+6"
+3+
+3+
+4
+4
+2
+3
+8
+3+
+
+UNIT COMPOSITION
+This unit contains 1 Reiver Sergeant and 4 Reivers. It can include up to 5 additional Reivers (Power Rating +5). Each model is armed with a bolt carbine, a heavy bolt pistol, frag grenades, krak grenades, and shock grenades.
+
+WEAPONS
+Bolt Carbine
+24"
+Assault 2
+4
+0
+1
+
+Heavy Bolt Pistol
+12"
+Pistol 1
+4
+-1
+1
+
+Combat Knife
+Melee
+Melee
+User
+0
+1
+Each time the bearer fights, it can make 1 additional attack with this weapon.
+
+Frag Grenade
+6"
+Grenade D6
+3
+0
+1
+
+Krak Grenade
+6"
+Grenade 1
+6
+-1
+D3
+
+Shock Grenade
+6"
+Grenade D3
+*
+*
+*
+This weapon does not inflict any damage. If an enemy INFANTRY unit is hit by any shock grenades, it is stunned until the end of the turn - it cannot fire Overwatch and your opponent must subtract 1 from any hit rolls made for the unit.
+
+WARGEAR OPTIONS
+All models in the unit may replace their bolt carbine with a combat knife.
+All models in the unit may take grav-chutes.
+All models in the unit may take a grapnel launcher.
+
+ABILITIES
+And They Shall Know No Fear
+(pg 131)
+
+Grapnel Launchers
+When models with grapnel launchers move, do not count any vertical distance they move against the total they can move that turn (i.e. moving vertically is free for these models). In addition, during deployment, you can set up this unit, if it is equipped with grapnel launchers, behind enemy lines instead of placing it on the battlefield. At the end of your Movement phases this unit can join the battle - set it up within 6" of a battlefield edge of your choice and more than 9" away from any enemy models.
+
+Combat Squads
+Before any models are deployed at the start of the game, an Intercessor Squad containing 10 models may be split into two units, each containing 5 models.
+
+Terror Troops
+Enemy units must subtract 1 from their Leadership if they are within 3" of any Reiver Squads.
+
+Grav-chutes
+During deployment, you can set up this unit, if it is equipped with grav-chutes, in high orbit instead of placing it on battlefield. At the end of any of your Movement phases this unit can descend - set it up anywhere on the battlefield that is more than 9" away from any enemy models.
+
+FACTION KEYWORDS
+Imperium, Adeptus Astartes, Ultramarines
+
+KEYWORDS
+Infantry, Primaris, Reiver Squad

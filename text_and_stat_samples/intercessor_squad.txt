@@ -82,7 +82,7 @@ User
 WARGEAR OPTIONS
 All models in the unit may replace their bolt rifle with an auto bolt rifle or stalker bolt rifle.
 For every five models in the unit, one may take an auxiliary grenade launcher.
-The Intercessor Sergeant may take a power sword
+The Intercessor Sergeant may take a power sword.
 
 ABILITIES
 And They Shall Know No Fear
