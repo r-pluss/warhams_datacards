@@ -3,7 +3,7 @@ editable, printable data cards for Warhammer models
 
 ## todo
 
-* inter-session persistence of created datasheets
+* ~~inter-session persistence of created datasheets~~
 * ~~abilities entry~~
 * ~~faction keyword entries~~
 * ~~keyword entries~~
@@ -18,3 +18,4 @@ editable, printable data cards for Warhammer models
 * support for models that characteristics that change with wound levels
 * support for units that have keywords that apply to separate models within the unit
 * ~~change weapon ability field from input to textarea to allow wrapping~~
+* correctly instantiate line heights of datacell fields that contain textareas upon profile load
