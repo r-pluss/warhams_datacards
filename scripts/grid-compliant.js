@@ -132,19 +132,6 @@ const datasheetSections = [
     {class: 'keywords', extractor: extractKeywords}
 ];
 const savedSheets = [];
-const unitTemplate = {
-    abilities: [],
-    battlefieldRole: 'troop',
-    id: undefined,
-    factionKeywords: undefined,
-    keywords: undefined,
-    powerRating: undefined,
-    profiles: [],
-    unitComposition: undefined,
-    unitName: undefined,
-    wargear: [],
-    weapons: []
-};
 
 function appendAbility(list, config){
     let li = document.createElement('li');
@@ -548,6 +535,22 @@ function makeNewWargearItem(text){
     return li
 }
 
+function makeUnitTemplate(){
+    return {
+        abilities: [],
+        battlefieldRole: 'troop',
+        id: undefined,
+        factionKeywords: undefined,
+        keywords: undefined,
+        powerRating: undefined,
+        profiles: [],
+        unitComposition: undefined,
+        unitName: undefined,
+        wargear: [],
+        weapons: []
+    };
+}
+
 function persistDataLocally(){
     try{
         window.localStorage.setItem(
@@ -649,7 +652,7 @@ function saveCurrentSheet(ev){
 
 function saveDatasheet(datasheet){
     console.log(datasheet);
-    let data = Object.assign({}, unitTemplate);
+    let data = makeUnitTemplate();
     console.log(JSON.stringify(data));
     let sheetID = datasheet.dataset.datasheetId;
     if(sheetID && sheetID !== 'undefined'){
