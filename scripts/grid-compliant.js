@@ -331,10 +331,17 @@ function extractDataFields(item){
     let values = [];
     for(let el of item.children){
         if(!el.classList.contains('remove-btn')){
-            values.push(
-                el.firstElementChild.textContent.length > 0 ?
-                    el.firstElementChild.textContent : undefined
-            );
+            if(el.tagName === 'DIV'){
+                values.push(
+                    el.firstElementChild.textContent.length > 0 ?
+                        el.firstElementChild.textContent : undefined
+                );
+            }else{
+                values.push(
+                    el.firstElementChild.value.length > 0 ?
+                        el.firstElementChild.value : undefined
+                );
+            }
         }
     }
     return values;
