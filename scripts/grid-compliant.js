@@ -284,6 +284,10 @@ function checkAndRestoreSavedSheets(){
     }
 }
 
+function clearCurrentSheet(ev){
+    clearDataSheet(document.querySelector('.datasheet'));
+}
+
 function clearDataSheet(sheet){
     sheet.querySelector('.unit-name').value = '';
     sheet.querySelector('.power-rating').querySelector('input').value = '';
@@ -677,6 +681,8 @@ function setupInitialEventListeners(){
             textarea.addEventListener('input', dynamicallySizeTextarea);
         }
     }
+    let clearBtn = document.getElementById('clear-sheet-btn');
+    clearBtn.addEventListener('click', clearCurrentSheet, {passive: false});
     let snapshotBtn = document.getElementById('snapshot-btn');
     snapshotBtn.addEventListener('click', snapshot, {passive: true});
     let saveBtn = document.getElementById('persist-data-btn');
