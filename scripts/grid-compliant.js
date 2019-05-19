@@ -556,6 +556,7 @@ function resolveSheetIdCollision(data){
                 for(let sht of savedSheets){
                     if(sht.id === this.id){
                         savedSheets[i] = this;
+                        persistDataLocally();
                         break;
                     }
                     i++;
@@ -642,16 +643,13 @@ function saveDatasheet(datasheet){
         let needIdConfirm = false;
         for(let sht of savedSheets){
             if(sht.id === data.id){
-                /*throw new Error(
-                    `datasheet with id [${sht.id}] already exists.`
-                );*/
                 needIdConfirm = true;
                 resolveSheetIdCollision(data);
             }
         }
         if(!needIdConfirm){
             savedSheets.push(data);
-            //persistDataLocally();
+            persistDataLocally();
         }
     }
 }
