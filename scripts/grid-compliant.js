@@ -111,6 +111,7 @@ const dataGrids = {
                         type: 'input'
                     }
                 ],
+                markForUpdate: true,
                 placeholder: '--'
             }
         ],
@@ -168,7 +169,9 @@ function appendWargearItem(ev){
 
 function applyDataToSheet(data, sheet){
     let entry;
+    let fld;
     let i;
+    let updateMe = [];
     if(data.id){
         sheet.dataset.datasheetId = data.id;
     }
@@ -191,10 +194,14 @@ function applyDataToSheet(data, sheet){
             i = 0;
             entry = makeNewDataGridRow(dataGrids.profile);
             for(let val of item){
+                fld = entry.children[i].firstElementChild;
                 if(val){
-                    entry.children[i].firstElementChild.tagName === 'DIV' ?
-                        entry.children[i].firstElementChild.textContent = val :
-                        entry.children[i].firstElementChild.value = val ;
+                    fld.tagName === 'DIV' ?
+                        fld.textContent = val :
+                        fld.value = val ;
+                }
+                if(fld.dataset.hasOwnProperty('updateMe')){
+                    updateMe.push(fld);
                 }
                 i++;
             }
@@ -212,10 +219,14 @@ function applyDataToSheet(data, sheet){
             i = 0;
             entry = makeNewDataGridRow(dataGrids.weapon);
             for(let val of item){
+                fld = entry.children[i].firstElementChild;
                 if(val){
-                    entry.children[i].firstElementChild.tagName === 'DIV' ?
-                        entry.children[i].firstElementChild.textContent = val :
-                        entry.children[i].firstElementChild.value = val ;
+                    fld.tagName === 'DIV' ?
+                        fld.textContent = val :
+                        fld.value = val ;
+                }
+                if(fld.dataset.hasOwnProperty('updateMe')){
+                    updateMe.push(fld);
                 }
                 i++;
             }
@@ -241,6 +252,10 @@ function applyDataToSheet(data, sheet){
     }
     if(data.keywords){
         sheet.querySelector('.keywords-input').value = data.keywords;
+    }
+    for(let el of updateMe){
+        el.dispatchEvent(new InputEvent('input'));
+        delete el.dataset.updateMe;
     }
 }
 
@@ -475,6 +490,9 @@ function makeDataGridCell(fld){
     }
     if(fld.hasOwnProperty('value')){
         input.value = fld.value;
+    }
+    if(fld.hasOwnProperty('markForUpdate')){
+        input.dataset.updateMe = true;
     }
     cell.appendChild(input);
     return cell;
