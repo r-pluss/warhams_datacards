@@ -745,10 +745,12 @@ function snapshot(){
     for(let sheet of sheets){
         html2canvas(sheet).then(
             function(canvas){
+                let fileName = sheet.dataset.hasOwnProperty('datasheetId') ?
+                    sheet.dataset.datasheetId : 'datasheet_test.png';
                 let img = canvas.toDataURL();
                 let a = document.createElement('a');
                 a.href = img;
-                a.setAttribute('download', 'datasheet_test.png');
+                a.setAttribute('download', fileName);
                 a.click();
             }
         );
