@@ -395,6 +395,7 @@ function extractKeywords(sectionContent, data){
 }
 
 function extractProfileData(sectionContent, data){
+    console.log(data.profiles);
     if(sectionContent.childElementCount > 1){
         for(let child of sectionContent.children){
             if(child.classList.contains('profile-item')){
@@ -418,6 +419,7 @@ function extractWargearData(sectionContent, data){
 }
 
 function extractWeaponData(sectionContent, data){
+    console.log(data.weapons);
     if(sectionContent.childElementCount > 1){
         for(let child of sectionContent.children){
             if(child.classList.contains('weapon-item')){
