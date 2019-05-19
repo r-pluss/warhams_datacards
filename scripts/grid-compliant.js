@@ -704,3 +704,4 @@ function syncSavedSheetsMenu(){
 
 vex.defaultOptions.className = 'vex-theme-flat-attack';
 setupInitialEventListeners();
+checkAndRestoreSavedSheets();
