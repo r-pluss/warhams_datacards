@@ -331,7 +331,7 @@ function extractDataFields(item){
     let values = [];
     for(let el of item.children){
         if(!el.classList.contains('remove-btn')){
-            if(el.tagName === 'DIV'){
+            if(el.firstElementChild.tagName === 'DIV'){
                 values.push(
                     el.firstElementChild.textContent.length > 0 ?
                         el.firstElementChild.textContent : undefined
