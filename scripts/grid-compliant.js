@@ -650,7 +650,7 @@ function saveCurrentSheet(ev){
 function saveDatasheet(datasheet){
     console.log(datasheet);
     let data = Object.assign({}, unitTemplate);
-    console.log(data);
+    console.log(JSON.stringify(data));
     let sheetID = datasheet.dataset.datasheetId;
     if(sheetID && sheetID !== 'undefined'){
         data.id = sheetID;
