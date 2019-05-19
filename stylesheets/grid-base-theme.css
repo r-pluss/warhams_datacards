@@ -352,6 +352,7 @@
 .wargear-item > input {
     background: transparent;
     border: none;
+    font-family: inherit;
     font-style: italic;
     text-align: left;
     width: 100%;
@@ -412,6 +413,10 @@
 
 }
 /******* sub-sections *******/
+.faction-keywords-input {
+    font-family: inherit;
+}
+
 .faction-keywords-label:after {
     content: 'Faction Keywords';
 }
@@ -421,6 +426,10 @@
 
 }
 /******* sub-sections *******/
+.keywords-input {
+    font-family: inherit;
+}
+
 .keywords-label:after {
     content: 'Keywords';
 }
