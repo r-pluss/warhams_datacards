@@ -329,6 +329,7 @@ function dynamicallySizeTextarea(ev){
 }
 
 function extractAbilities(sectionContent, data){
+    data.abilities = [];
     for(let item of sectionContent.querySelectorAll('.ability-item')){
         data.abilities.push(
             [
@@ -364,6 +365,8 @@ function extractDataFromSection(section, data){
 function extractFactionKeywords(sectionContent, data){
     if(sectionContent.children[1].value.length > 0){
         data.factionKeywords = sectionContent.children[1].value;
+    }else{
+        data.factionKeywords = undefined;
     }
 }
 
@@ -386,6 +389,8 @@ function extractHeaderData(sectionContent, data){
 function extractKeywords(sectionContent, data){
     if(sectionContent.children[1].value.length > 0){
         data.keywords = sectionContent.children[1].value;
+    }else{
+        data.keywords = undefined;
     }
 }
 
@@ -396,11 +401,14 @@ function extractProfileData(sectionContent, data){
                 data.profiles.push(extractDataFields(child));
             }
         }
+    }else{
+        data.profiles = [];
     }
 }
 
 function extractWargearData(sectionContent, data){
     let wargearList = sectionContent.querySelector('ul');
+    data.wargear = [];
     for(let li of wargearList.querySelectorAll('.wargear-item')){
         data.wargear.push(
             li.firstElementChild.value.length > 0 ?
@@ -416,6 +424,8 @@ function extractWeaponData(sectionContent, data){
                 data.weapons.push(extractDataFields(child));
             }
         }
+    }else{
+        data.weapons = [];
     }
 }
 
