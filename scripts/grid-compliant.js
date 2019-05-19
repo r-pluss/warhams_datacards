@@ -289,6 +289,7 @@ function clearCurrentSheet(ev){
 }
 
 function clearDataSheet(sheet){
+    sheet.dataset.datasheetId = 'undefined';
     sheet.querySelector('.unit-name').value = '';
     sheet.querySelector('.power-rating').querySelector('input').value = '';
     let bfRole = sheet.querySelector('.battlefield-role');
