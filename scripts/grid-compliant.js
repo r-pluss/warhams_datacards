@@ -631,6 +631,7 @@ function requestDatasheetId(data){
 
 function saveCurrentSheet(ev){
     saveDatasheet(document.querySelector('.datasheet'));
+    syncSavedSheetsMenu();
 }
 
 function saveDatasheet(datasheet){
