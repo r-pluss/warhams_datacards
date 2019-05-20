@@ -1,6 +1,8 @@
 # warhams_datacards
 editable, printable data cards for Warhammer models
 
+[visit the project demo](https://r-pluss.github.io/warhams_datacards/)
+
 ## todo
 
 * ~~inter-session persistence of created datasheets~~
