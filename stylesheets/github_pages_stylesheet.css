@@ -17,6 +17,11 @@ main {
     width: 100%;
 }
 
+.project-link {
+    color: #0ebde6;
+    text-decoration: none;
+}
+
 #app-controls {
     align-items: center;
     border: solid #525252 2px;
